@@ -44,8 +44,11 @@ export default function RootLayout({
           <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-purple-300/20 rounded-full blur-[120px] mix-blend-multiply dark:hidden block" />
         </div>
         
+        {/* Sidebar Overlay Mask */}
+        <div className="fixed inset-0 bg-black/60 z-40 opacity-0 pointer-events-none group-has-[aside:hover]/layout:opacity-100 transition-opacity duration-300" />
+        
         <Sidebar />
-        <div className="relative z-10 pl-20 group-has-[aside:hover]/layout:pl-64 transition-all duration-300">
+        <div className="relative z-10 pl-20 transition-all duration-300">
           {children}
         </div>
         </ThemeProvider>

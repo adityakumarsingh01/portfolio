@@ -8,7 +8,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -16,7 +16,7 @@ export default function Navbar() {
     >
       <Link href="/" className="font-bold text-xl tracking-tighter flex items-center gap-2 group">
         <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-600 flex items-center justify-center text-sm group-hover:scale-110 transition-transform">AS</div>
-        Aditya<span className="text-[var(--accent-light)]">.Singh</span>
+        Aditya<span className="text-[var(--accent-light)]"> Singh</span>
       </Link>
 
       <div className="flex items-center gap-6 text-sm font-medium">
