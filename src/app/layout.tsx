@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
@@ -44,11 +44,10 @@ export default function RootLayout({
           <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-purple-300/20 rounded-full blur-[120px] mix-blend-multiply dark:hidden block" />
         </div>
         
-        {/* Sidebar Overlay Mask */}
-        <div className="fixed inset-0 bg-black/60 z-40 opacity-0 pointer-events-none group-has-[aside:hover]/layout:opacity-100 transition-opacity duration-300" />
+        {/* Sidebar Overlay Mask (Removed, now using Top Navbar) */}
         
-        <Sidebar />
-        <div className="relative z-10 pl-20 transition-all duration-300">
+        <Navbar />
+        <div className="relative z-10 transition-all duration-300">
           {children}
         </div>
         </ThemeProvider>

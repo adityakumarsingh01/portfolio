@@ -54,62 +54,74 @@ export default function Home() {
   return (
     <main className="max-w-7xl mx-auto px-6 md:px-12">
       {/* Hero Section */}
-      <section className="min-h-[85vh] flex flex-col justify-center pt-20">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl mt-12 md:mt-0"
+      <section className="min-h-[95vh] flex justify-center items-center relative overflow-hidden">
+        <div className="w-full flex flex-col justify-center items-center relative z-10 mt-10 md:mt-0 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="flex flex-col items-center"
           >
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full glass border border-blue-500/30 text-blue-400 text-sm font-medium">
-              <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-              Available for Opportunities
-            </div>
-
-            <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-6 leading-[1.1] text-gray-900 dark:text-white">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Aditya</span> Kumar Singh <br />
-            </h1>
-
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-10 max-w-xl font-light">
-              ASPIRING <strong className="text-gray-900 dark:text-white font-medium"> DATA SCIENTIST</strong> | MACHINE LEARNING ENTHUSIAST | ENGINEERING STUDENT
-            </p>
-
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-10 max-w-xl font-light">
-              I translate complex data into <strong className="text-gray-900 dark:text-white font-medium">actionable intelligence</strong>, building predictive ML models and scalable AI platforms.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/projects" className="px-8 py-4 rounded-full bg-gray-900 text-white dark:bg-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 font-bold transition-colors flex items-center justify-center gap-2 text-lg">
-                Explore Projects <ChevronRight className="w-5 h-5" />
-              </Link>
-              <a href="mailto:adityasingh81201@gmail.com" className="px-8 py-4 rounded-full glass hover:bg-black/5 dark:hover:bg-white/10 font-bold transition-colors flex items-center justify-center gap-2 text-lg text-gray-800 dark:text-white">
-                Contact Me
-              </a>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="relative group"
-          >
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-600 rounded-full blur-[60px] opacity-40 group-hover:opacity-70 transition-opacity duration-500" />
-            <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/10 glass p-2">
-              <div className="w-full h-full rounded-full overflow-hidden relative bg-black/50">
-                <Image
-                  src="/profile.jpg"
-                  alt="Aditya Kumar Singh"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+            <h1 className="text-[clamp(4rem,11vw,14rem)] font-medium leading-[0.85] tracking-tighter flex flex-col z-20 relative w-full items-center">
+              <div className="overflow-hidden h-[1.1em] flex justify-center"><span className="inline-block text-gray-900 dark:text-white">Aditya</span></div>
+              <div className="overflow-hidden h-[1.1em] flex justify-center relative w-full">
+                <div className="absolute top-1/2 left-0 right-0 h-[3px] bg-gray-200 dark:bg-gray-800 -z-10"></div>
+                <span className="inline-block text-gray-300 dark:text-gray-700 bg-[var(--background)] px-4">—Kumar—</span>
               </div>
-            </div>
+              <div className="overflow-hidden h-[1.1em] flex justify-center"><span className="inline-block text-gray-900 dark:text-white">Singh.</span></div>
+            </h1>
           </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ delay: 0.5, duration: 1 }}
+            className="mt-8 flex justify-center"
+          >
+            <p className="text-[10px] md:text-[12px] font-bold text-gray-400 uppercase tracking-[0.25em] leading-loose max-w-2xl text-center">
+              DATA SCIENTIST / MACHINE LEARNING / AI PLATFORMS / FULL-STACK DEV / ENGINEERING
+            </p>
+          </motion.div>
+        </div>
+        
+        {/* Profile Image - Minimalist Floating */}
+        <motion.div
+           initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
+           animate={{ opacity: 1, scale: 1, rotate: -2 }}
+           transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+           className="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2 w-[30vw] max-w-[450px] aspect-[3/4] rounded-[2rem] overflow-hidden border border-black/5 dark:border-white/10 glass z-0 opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700 shadow-2xl"
+        >
+           <Image src="/profile.jpg" alt="Aditya" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 450px" />
+        </motion.div>
 
+        {/* Scroll Badge */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex justify-center opacity-80">
+          <div className="relative w-32 h-32 md:w-40 md:h-40 animate-[spin_15s_linear_infinite]">
+            <svg viewBox="0 0 100 100" className="w-full h-full fill-gray-900 dark:fill-white">
+              <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+              <text className="text-[9.5px] font-black uppercase tracking-[0.25em]">
+                <textPath href="#circlePath">SCROLL DOWN TO EXPLORE • SCROLL DOWN TO EXPLORE • </textPath>
+              </text>
+            </svg>
+          </div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
+            <div className="w-[2px] h-8 md:h-12 bg-gray-900 dark:bg-white rounded-full"></div>
+            <div className="w-1.5 h-1.5 bg-gray-900 dark:bg-white rounded-full mt-2"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Marquee */}
+      <section className="py-8 md:py-12 border-y border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 overflow-hidden flex w-full left-0 relative -mx-6 md:-mx-12 px-6 md:px-12 w-[100vw]">
+        <div className="flex shrink-0 animate-marquee whitespace-nowrap min-w-full justify-around items-center gap-12 md:gap-24 pr-12 md:pr-24">
+          {technicalStack.flatMap(s => s.skills).slice(0, 12).map((skill, i) => (
+             <span key={i} className="text-2xl md:text-5xl font-black text-gray-900 dark:text-white uppercase opacity-30 hover:opacity-100 transition-opacity duration-300 cursor-default">{skill}</span>
+          ))}
+        </div>
+        <div className="flex shrink-0 animate-marquee whitespace-nowrap min-w-full justify-around items-center gap-12 md:gap-24 pr-12 md:pr-24" aria-hidden="true">
+          {technicalStack.flatMap(s => s.skills).slice(0, 12).map((skill, i) => (
+             <span key={`dup-${i}`} className="text-2xl md:text-5xl font-black text-gray-900 dark:text-white uppercase opacity-30 hover:opacity-100 transition-opacity duration-300 cursor-default">{skill}</span>
+          ))}
         </div>
       </section>
 
