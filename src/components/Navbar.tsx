@@ -14,7 +14,7 @@ export default function Navbar() {
         Aditya Singh
       </Link>
 
-      <div className="hidden lg:flex gap-4 xl:gap-8 text-[10px] font-bold uppercase tracking-[0.2em]">
+      <div className="hidden lg:flex gap-12 xl:gap-16 text-[10px] font-bold uppercase tracking-[0.2em]">
         <Link href="/" className="hover:opacity-40 transition-opacity">Overview</Link>
         <Link href="/experience" className="hover:opacity-40 transition-opacity">Experience</Link>
         <Link href="/projects" className="hover:opacity-40 transition-opacity">Projects</Link>
