@@ -5,6 +5,8 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Mail, ChevronRight, BrainCircuit, Code, Database, Server, LineChart, Cpu, Zap, Eye, ArrowRight, ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import SkillsCarousel from "@/components/SkillsCarousel";
 import { SpotlightCard } from "@/components/SpotlightCard";
 
 const highlightedProjects = [
@@ -98,7 +100,7 @@ export default function Home() {
                 src="/profile.jpg"
                 alt="Aditya Kumar Singh"
                 fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="object-cover"
               />
             </div>
           </motion.div>
@@ -132,12 +134,12 @@ export default function Home() {
       </section>
 
       {/* Bento Box Skills & About */}
-      <section className="py-24">
+      <section className="py-24 border-t border-black/5 dark:border-white/5">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ type: "spring", stiffness: 200, damping: 20 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]"
         >
           {/* About Card */}
@@ -187,37 +189,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Technical Stack & Skills */}
-      <section className="py-24 border-t border-black/5 dark:border-white/5">
-        <div className="mb-12">
-          <h3 className="text-4xl font-black text-gray-900 dark:text-white mb-4">Technical <span className="text-gradient">Stack</span></h3>
-          <p className="text-gray-600 dark:text-gray-400 text-lg">A comprehensive overview of my technical proficiencies and tools.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {technicalStack.map((stack, idx) => (
-            <motion.div
-              key={stack.category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-            >
-              <SpotlightCard className="h-full p-8 border border-black/5 dark:border-white/5 group">
-                <h5 className="text-xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-blue-500 transition-colors">{stack.category}</h5>
-                <div className="flex flex-wrap gap-2">
-                  {stack.skills.map(skill => (
-                    <span key={skill} className="text-xs font-medium text-gray-700 dark:text-gray-300 bg-black/5 dark:bg-white/10 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 group-hover:border-blue-500/30 group-hover:bg-blue-500/10 transition-colors">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </SpotlightCard>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* 3D Project Cards (Highlighted) */}
       <section className="py-24 border-t border-black/5 dark:border-white/5">
         <div className="flex justify-between items-end mb-12">
@@ -235,6 +206,92 @@ export default function Home() {
           <Link href="/projects" className="px-8 py-4 rounded-full glass hover:bg-white/10 font-bold transition-colors inline-flex items-center justify-center gap-2">
             View All Projects <ChevronRight className="w-5 h-5" />
           </Link>
+        </div>
+      </section>
+
+      <SkillsCarousel />
+
+      {/* New Technical Stack Section */}
+      <section className="py-24 border-t border-black/5 dark:border-white/5 flex flex-col lg:flex-row gap-12 md:gap-24">
+        <div className="lg:w-1/3 lg:sticky lg:top-32 h-fit">
+          <h3 className="text-[clamp(3rem,5vw,5rem)] font-black leading-none tracking-tighter text-gray-900 dark:text-white mb-8">Technical Stack</h3>
+          <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+            As an engineering student passionate about <strong className="text-gray-900 dark:text-white">Data Science and Machine Learning</strong>, I use programming, data analysis, and visualization to solve real-world problems and extract meaningful insights from data.
+          </p>
+        </div>
+
+        <div className="lg:w-2/3 flex flex-col gap-6">
+          <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20 }}>
+            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+              <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Machine Learning</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                Build predictive and intelligent AI solutions using <strong className="text-gray-900 dark:text-white">Scikit-learn, Pandas, NumPy, and XGBoost</strong> with expertise in feature engineering, model training, evaluation, AutoML workflows, and supervised learning algorithms.
+              </p>
+            </SpotlightCard>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }}>
+            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+              <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Data Analysis</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                Perform end-to-end data analysis including <strong className="text-gray-900 dark:text-white">EDA, data cleaning, preprocessing, feature engineering, statistical analysis, and dataset profiling</strong> to uncover actionable business insights.
+              </p>
+            </SpotlightCard>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.2 }}>
+            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+              <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Data Visualization</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                Develop interactive dashboards and analytical reports using <strong className="text-gray-900 dark:text-white">Power BI, Recharts, Matplotlib, and Excel</strong>, enabling clear visualization of trends, KPIs, and model performance.
+              </p>
+            </SpotlightCard>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.3 }}>
+            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+              <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">AI & Natural Language Processing (NLP)</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                Develop intelligent AI applications using <strong className="text-gray-900 dark:text-white">PyTorch, Hugging Face Transformers, BART, BioBERT, and NLP techniques</strong> for text summarization, entity extraction, classification, and AI-assisted workflows.
+              </p>
+            </SpotlightCard>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.4 }}>
+            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+              <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Full-Stack AI Development</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                Design and develop modern AI-powered web applications using <strong className="text-gray-900 dark:text-white">Next.js, React, TypeScript, Tailwind CSS, FastAPI, REST APIs, and Axios</strong>, integrating machine learning models with responsive user interfaces.
+              </p>
+            </SpotlightCard>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.5 }}>
+            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+              <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Data Engineering & Big Data</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                Experience working with <strong className="text-gray-900 dark:text-white">Hadoop, Hive, HBase, Spark, Kafka, Airflow, and Sqoop</strong> for distributed data processing, storage, and analytics pipelines.
+              </p>
+            </SpotlightCard>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.6 }}>
+            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+              <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Tools & Technologies</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                Proficient in <strong className="text-gray-900 dark:text-white">Git/GitHub, VS Code, Jupyter Notebook, Docker, MySQL, PostgreSQL, REST APIs, Postman, Vercel, Render, and Linux</strong>, following modern software development practices.
+              </p>
+            </SpotlightCard>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.7 }}>
+            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+              <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Soft Skills & Ethics</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                Strong analytical thinking, problem-solving, communication, teamwork, adaptability, leadership, debugging, and solution-oriented development with a focus on writing clean and scalable code.
+              </p>
+            </SpotlightCard>
+          </motion.div>
         </div>
       </section>
 
@@ -289,9 +346,10 @@ function Project3DCard({ project, index }: { project: any, index: number }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ type: "spring", stiffness: 200, damping: 20, delay: index * 0.1 }}
       className="relative w-full h-[450px] rounded-3xl cursor-pointer group perspective-1000"
     >
       <div

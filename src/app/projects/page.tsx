@@ -107,7 +107,7 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <main className="max-w-7xl mx-auto px-6 md:px-12 py-12 relative">
+    <main className="max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-12 relative">
       <div className="mb-20">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
@@ -247,9 +247,10 @@ function Project3DCard({ project, index, layoutId }: { project: any, index: numb
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ type: "spring", stiffness: 200, damping: 20, delay: index * 0.1 }}
       className="relative w-full h-[450px] rounded-3xl cursor-pointer group perspective-1000"
     >
       <div 

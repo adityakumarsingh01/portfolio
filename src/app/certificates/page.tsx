@@ -29,7 +29,7 @@ const hackathons = [
 
 export default function CertificatesPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 md:px-12 py-12">
+    <main className="max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-12">
       <div className="mb-20">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
@@ -55,9 +55,10 @@ export default function CertificatesPage() {
           {certificates.map((cert, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.05 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ type: "spring", stiffness: 200, damping: 20, delay: idx * 0.05 }}
             >
               <SpotlightCard className="h-full p-6 flex flex-col group border border-black/5 dark:border-white/5">
                 <div className="w-12 h-12 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 text-gray-900 dark:text-white mb-6 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
@@ -79,9 +80,10 @@ export default function CertificatesPage() {
           {hackathons.map((hack, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 + (idx * 0.1) }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.2 + (idx * 0.1) }}
             >
               <SpotlightCard className="h-full p-8 flex flex-col justify-between group border border-black/5 dark:border-white/5">
                 <div className="mb-6">

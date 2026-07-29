@@ -5,7 +5,7 @@ import { SpotlightCard } from "@/components/SpotlightCard";
 
 export default function TrainingPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 md:px-12 py-12">
+    <main className="max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-12">
       <div className="mb-20">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
@@ -25,7 +25,7 @@ export default function TrainingPage() {
       </div>
 
       <div className="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="shrink-0 w-[90vw] md:w-[800px] snap-center">
+        <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }} className="shrink-0 w-[90vw] md:w-[800px] snap-center">
           <SpotlightCard className="h-full p-8 md:p-12 border border-black/5 dark:border-white/5 group">
             <div className="flex justify-between items-start md:items-end mb-8 flex-col md:flex-row gap-4 relative z-10">
               <div>
@@ -64,7 +64,7 @@ export default function TrainingPage() {
           </SpotlightCard>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="shrink-0 w-[90vw] md:w-[800px] snap-center">
+        <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }} className="shrink-0 w-[90vw] md:w-[800px] snap-center">
           <SpotlightCard className="h-full p-8 md:p-12 border border-black/5 dark:border-white/5 group">
             <div className="flex justify-between items-start md:items-end mb-8 flex-col md:flex-row gap-4 relative z-10">
               <div>

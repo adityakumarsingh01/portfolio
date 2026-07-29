@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[var(--background)] text-[var(--foreground)] selection:bg-[var(--accent)] selection:text-white overflow-x-hidden relative transition-colors duration-300 group/layout`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange={false}
         >
@@ -39,9 +39,8 @@ export default function RootLayout({
           <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-purple-900/20 rounded-full blur-[120px] mix-blend-screen hidden dark:block" />
 
           {/* Light Mode Background */}
-          <div className="absolute top-0 -left-1/4 w-[150vw] h-[100vh] bg-gradient-to-br from-blue-50 via-slate-50 to-purple-50 animate-gradient -z-10 dark:hidden block" />
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-300/20 rounded-full blur-[150px] mix-blend-multiply animate-pulse dark:hidden block" />
-          <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-purple-300/20 rounded-full blur-[120px] mix-blend-multiply dark:hidden block" />
+          <div className="absolute top-0 left-0 w-full h-[100vh] bg-white -z-10 dark:hidden block" />
+          <div className="absolute top-0 w-full h-[100vh] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay dark:hidden block" />
         </div>
         
         {/* Sidebar Overlay Mask (Removed, now using Top Navbar) */}
