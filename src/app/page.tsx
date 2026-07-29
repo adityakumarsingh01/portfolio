@@ -1,9 +1,9 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Mail, ChevronRight, BrainCircuit, Code, Database, Server, LineChart, Cpu, Zap, Eye, ArrowRight, ExternalLink } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
+import { Mail, ChevronRight, BrainCircuit, Code, Database, Server, LineChart, Cpu, Zap, Eye, ArrowRight, ExternalLink, X, ChevronLeft } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SkillsCarousel from "@/components/SkillsCarousel";
@@ -14,22 +14,25 @@ const highlightedProjects = [
     title: "InsightForge AI",
     date: "Jul' 26 - Aug' 26",
     description: "Developed a full-stack AI-powered Machine Learning platform that enables users to upload datasets, perform automated data profiling, visualize insights, train ML models, generate AI recommendations, forecast trends, and create professional PDF reports through an interactive dashboard.",
+    detailedDescription: "InsightForge AI is a comprehensive machine learning and data analytics platform designed to democratize AI. It features an intuitive drag-and-drop interface for dataset management, automated machine learning (AutoML) pipelines that select the best algorithms, and an AI assistant that provides actionable insights from complex datasets. The architecture is built for high scalability and low latency, leveraging distributed computing.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "FastAPI", "Python", "Scikit-learn", "Pandas", "Recharts", "ReportLab"],
-    github: "https://github.com/adityakumarsingh01/InsightForge-AI.git", live: "https://insightforge-ai-sand.vercel.app/"
+    github: "https://github.com/adityakumarsingh01/InsightForge-AI.git", live: "https://insightforge-ai-sand.vercel.app/", image: "/project-image/InsightforgeAI.png"
   },
   {
     title: "InvestIQ",
     date: "Jun' 26 - Jul' 26",
     description: "Developed a full-stack AI-powered investment research platform that provides real-time company analysis, live stock prices, financial metrics, news sentiment analysis, company comparison, and intelligent investment recommendations through a modern interactive dashboard.",
+    detailedDescription: "InvestIQ revolutionizes retail investing by bringing institutional-grade research tools to everyday investors. The platform ingests real-time financial data from the Finnhub API and uses proprietary NLP models to analyze earnings call transcripts, news sentiment, and SEC filings. The dashboard provides clear, actionable scores for over 10,000 publicly traded companies.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Finnhub API", "Alpha Vantage API", "React"],
-    github: "https://github.com/adityakumarsingh01/InvestIQ.git", live: "https://investiq-omega.vercel.app/"
+    github: "https://github.com/adityakumarsingh01/InvestIQ.git", live: "https://investiq-omega.vercel.app/", image: "/placeholder.jpg"
   },
   {
     title: "MediReporter",
     date: "Mar' 26 - May' 26",
     description: "Built an intelligent healthcare NLP application that analyzes clinical reports, generates concise medical summaries, extracts diseases, symptoms, drugs, and treatments, and performs patient risk classification using Deep Learning and Transformer-based models.",
+    detailedDescription: "MediReporter aims to reduce the administrative burden on healthcare professionals. By utilizing state-of-the-art NLP models like BioBERT and BART, it processes dense clinical reports and outputs highly accurate, structured medical summaries. It automatically extracts key entities such as symptoms, prescribed treatments, and diagnosed diseases, presenting them in an easy-to-read dashboard.",
     tags: ["Python", "PyTorch", "NLP"],
-    github: "https://github.com/adityakumarsingh01/Medical-Report-Summarization.git"
+    github: "https://github.com/adityakumarsingh01/Medical-Report-Summarization.git", live: "#", image: "/placeholder.jpg"
   }
 ];
 
@@ -47,6 +50,32 @@ const technicalStack = [
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const selectedIndex = selectedId ? highlightedProjects.findIndex(p => p.title === selectedId) : -1;
+  const selectedProject = selectedIndex !== -1 ? highlightedProjects[selectedIndex] : null;
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedIndex !== -1) {
+      const nextIndex = (selectedIndex + 1) % highlightedProjects.length;
+      setSelectedId(highlightedProjects[nextIndex].title);
+    }
+  };
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedIndex !== -1) {
+      const prevIndex = (selectedIndex - 1 + highlightedProjects.length) % highlightedProjects.length;
+      setSelectedId(highlightedProjects[prevIndex].title);
+    }
+  };
+
+  const gradients = [
+    "from-blue-600 via-indigo-500 to-purple-600",
+    "from-emerald-500 via-teal-400 to-cyan-500",
+    "from-rose-500 via-pink-500 to-purple-500",
+    "from-amber-500 via-orange-500 to-red-500"
+  ];
 
   useEffect(() => {
     setMounted(true);
@@ -198,7 +227,9 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {highlightedProjects.map((project, idx) => (
-            <Project3DCard key={idx} project={project} index={idx} />
+            <div key={project.title} onClick={() => setSelectedId(project.title)}>
+              <Project3DCard project={project} index={idx} layoutId={project.title} />
+            </div>
           ))}
         </div>
 
@@ -295,6 +326,117 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Expanded Modal */}
+      <AnimatePresence>
+        {selectedId && selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12 bg-black/80 backdrop-blur-md"
+            onClick={() => setSelectedId(null)}
+          >
+            {/* Prev Button */}
+            <button
+              onClick={handlePrev}
+              className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-50 bg-white/10 hover:bg-white/20 text-white p-2 md:p-3 rounded-full backdrop-blur-md transition-all hover:scale-110 border border-white/20"
+            >
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+
+            {/* Next Button */}
+            <button
+              onClick={handleNext}
+              className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-50 bg-white/10 hover:bg-white/20 text-white p-2 md:p-3 rounded-full backdrop-blur-md transition-all hover:scale-110 border border-white/20"
+            >
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+
+            <motion.div
+              layoutId={selectedId}
+              className="bg-gray-50 dark:bg-[#0a0026] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col md:flex-row relative border border-white/10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedId(null)}
+                className="absolute top-6 right-6 z-20 bg-black/50 hover:bg-black/80 text-white p-3 rounded-full backdrop-blur-md transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {/* Left Side: Visuals */}
+              <div className={`w-full md:w-2/5 h-64 md:h-auto bg-gradient-to-br ${gradients[highlightedProjects.findIndex(p => p.title === selectedId) % gradients.length]} relative flex flex-col justify-end p-8`}>
+                <div className="absolute inset-0 bg-black/20 mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+
+                <h2 className="text-4xl md:text-5xl font-bold text-white relative z-10 drop-shadow-lg leading-tight capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+                  {selectedProject.title}
+                </h2>
+              </div>
+
+              {/* Right Side: Details */}
+              <div className="w-full md:w-3/5 p-8 md:p-12 flex flex-col">
+                <div className="flex justify-start mb-4">
+                  <span className="text-sm font-mono text-gray-500 dark:text-gray-400 uppercase tracking-widest">
+                    {selectedProject.date}
+                  </span>
+                </div>
+
+                <h3 className="text-lg md:text-xl font-bold italic text-gray-900 dark:text-white leading-tight mb-6 capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+                  {selectedProject.description}
+                </h3>
+
+                <div className="flex flex-wrap gap-x-3 gap-y-1 mb-8 text-blue-600 dark:text-blue-500 font-semibold italic tracking-wide uppercase text-sm md:text-base">
+                  {selectedProject.tags.map((tag: string, i: number) => (
+                    <React.Fragment key={tag}>
+                      <span>{tag}</span>
+                      {i < selectedProject.tags.length - 1 && <span className="text-blue-400/50">|</span>}
+                    </React.Fragment>
+                  ))}
+                </div>
+
+                <div className="mb-2 text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wider">Overview</div>
+                <div className="prose prose-lg dark:prose-invert text-gray-600 dark:text-gray-400 mb-8 flex-grow">
+                  <p className="leading-relaxed">{selectedProject.detailedDescription}</p>
+                </div>
+
+                <div className="flex flex-wrap gap-4 pt-8 border-t border-black/5 dark:border-white/10">
+                  {selectedProject.live && (
+                    <a
+                      href={selectedProject.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-[200px] flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform uppercase tracking-wider text-sm shadow-xl"
+                    >
+                      <Eye className="w-5 h-5" /> Live Demo
+                    </a>
+                  )}
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 min-w-[200px] flex items-center justify-center gap-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform uppercase tracking-wider text-sm shadow-xl"
+                  >
+                    <FaGithub className="w-5 h-5" /> View Source
+                  </a>
+                  {selectedProject.linkedin && (
+                    <a
+                      href={selectedProject.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-[200px] flex items-center justify-center gap-3 bg-[#0A66C2] text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform uppercase tracking-wider text-sm shadow-xl"
+                    >
+                      <FaLinkedin className="w-5 h-5" /> LinkedIn
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Footer */}
       <footer className="py-8 border-t border-white/5 text-center text-gray-500">
         <p>© {new Date().getFullYear()} Aditya Kumar Singh. Built with Next.js & Framer Motion.</p>
@@ -303,7 +445,7 @@ export default function Home() {
   );
 }
 
-function Project3DCard({ project, index }: { project: any, index: number }) {
+function Project3DCard({ project, index, layoutId }: { project: any, index: number, layoutId?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -352,13 +494,24 @@ function Project3DCard({ project, index }: { project: any, index: number }) {
       transition={{ type: "spring", stiffness: 200, damping: 20, delay: index * 0.1 }}
       className="relative w-full h-[450px] rounded-3xl cursor-pointer group perspective-1000"
     >
-      <div
+      <motion.div
+        layoutId={layoutId}
         className="absolute inset-0 rounded-3xl bg-black/40 dark:bg-white/5 border border-black/10 dark:border-white/10 overflow-hidden flex flex-col transition-all duration-300 group-hover:border-white/20"
         style={{ transform: "translateZ(30px)" }}
       >
-        <div className={`h-48 w-full bg-gradient-to-br ${gradient} relative overflow-hidden group-hover:scale-105 transition-transform duration-700`}>
-          <div className="absolute inset-0 bg-black/20 mix-blend-overlay"></div>
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+        <div className={`h-48 w-full ${!project.image ? `bg-gradient-to-br ${gradient}` : 'bg-gray-200 dark:bg-gray-800'} relative overflow-hidden group-hover:scale-105 transition-transform duration-700`}>
+          {project.image && project.image !== "/placeholder.jpg" ? (
+            <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-black/20 mix-blend-overlay"></div>
+              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+            </>
+          )}
+          
+          <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span className="text-white font-bold tracking-wider text-sm drop-shadow-md">Explore Project</span>
+          </div>
 
           <div className="absolute bottom-4 left-4 flex gap-2" style={{ transform: "translateZ(50px)" }}>
             {project.tags.slice(0, 2).map((tag: string) => (
@@ -386,7 +539,7 @@ function Project3DCard({ project, index }: { project: any, index: number }) {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <div
         className={`absolute -inset-4 bg-gradient-to-br ${gradient} rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10`}
