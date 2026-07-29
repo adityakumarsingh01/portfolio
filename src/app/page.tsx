@@ -13,26 +13,26 @@ const highlightedProjects = [
   {
     title: "InsightForge AI",
     date: "Jul' 26 - Aug' 26",
-    description: "Developed a full-stack AI-powered Machine Learning platform that enables users to upload datasets, perform automated data profiling, visualize insights, train ML models, generate AI recommendations, forecast trends, and create professional PDF reports through an interactive dashboard.",
-    detailedDescription: "InsightForge AI is a comprehensive machine learning and data analytics platform designed to democratize AI. It features an intuitive drag-and-drop interface for dataset management, automated machine learning (AutoML) pipelines that select the best algorithms, and an AI assistant that provides actionable insights from complex datasets. The architecture is built for high scalability and low latency, leveraging distributed computing.",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "FastAPI", "Python", "Scikit-learn", "Pandas", "Recharts", "ReportLab"],
-    github: "https://github.com/adityakumarsingh01/InsightForge-AI.git", live: "https://insightforge-ai-sand.vercel.app/", image: "/project-image/InsightforgeAI.png"
+    description: "A No-Code Automated Machine Learning & Data Science Workspace",
+    detailedDescription: "InsightForge AI is an AI-powered data analytics platform that automates dataset analysis, EDA, machine learning, forecasting, and report generation. Built with Next.js, FastAPI, Python, and TypeScript, it helps users gain actionable insights through an intuitive web interface.",
+    tags: ["NEXT.JS", "REACT", "TYPESCRIPT", "TAILWIND CSS", "FASTAPI", "AXIOS", "PYTHON", "SCIKIT-LEARN", "PANDAS", "RECHARTS", "REPORTLAB", "Git", "GitHub"],
+    live: "https://insightforge-ai-sand.vercel.app/", github: "https://github.com/adityakumarsingh01/InsightForge-AI.git", linkedin: "https://lnkd.in/p/d-9Wafee", image: "/project-image/InsightforgeAI.png"
   },
   {
     title: "InvestIQ",
     date: "Jun' 26 - Jul' 26",
-    description: "Developed a full-stack AI-powered investment research platform that provides real-time company analysis, live stock prices, financial metrics, news sentiment analysis, company comparison, and intelligent investment recommendations through a modern interactive dashboard.",
-    detailedDescription: "InvestIQ revolutionizes retail investing by bringing institutional-grade research tools to everyday investors. The platform ingests real-time financial data from the Finnhub API and uses proprietary NLP models to analyze earnings call transcripts, news sentiment, and SEC filings. The dashboard provides clear, actionable scores for over 10,000 publicly traded companies.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Finnhub API", "Alpha Vantage API", "React"],
-    github: "https://github.com/adityakumarsingh01/InvestIQ.git", live: "https://investiq-omega.vercel.app/", image: "/placeholder.jpg"
+    description: "AI-Powered Investment Research Platform. Analyzes 10,000+ global publicly listed companies using real-time financial data.",
+    detailedDescription: "InvestIQ is an AI-powered investment research platform that analyzes live stock market data, financial metrics, and company fundamentals to generate intelligent investment insights and recommendations. Built with Next.js, TypeScript, Python, and financial APIs.",
+    tags: ["NEXT.JS", "REACT.JS", "TYPESCRIPT", "TAILWIND CSS", "FASTAPI", "PYTHON", "Rule-Based Multi-Agent System", "FINNHUB API", "ALPHA VANTAGE API", "Git", "GitHub"],
+    live: "https://investiq-omega.vercel.app/", github: "https://github.com/adityakumarsingh01/InvestIQ.git", linkedin: "https://lnkd.in/p/gH9PriT6", image: "/project-image/InvestIQ.png"
   },
   {
-    title: "MediReporter",
+    title: "MediReporter: AI Clinical Analysis",
     date: "Mar' 26 - May' 26",
-    description: "Built an intelligent healthcare NLP application that analyzes clinical reports, generates concise medical summaries, extracts diseases, symptoms, drugs, and treatments, and performs patient risk classification using Deep Learning and Transformer-based models.",
-    detailedDescription: "MediReporter aims to reduce the administrative burden on healthcare professionals. By utilizing state-of-the-art NLP models like BioBERT and BART, it processes dense clinical reports and outputs highly accurate, structured medical summaries. It automatically extracts key entities such as symptoms, prescribed treatments, and diagnosed diseases, presenting them in an easy-to-read dashboard.",
-    tags: ["Python", "PyTorch", "NLP"],
-    github: "https://github.com/adityakumarsingh01/Medical-Report-Summarization.git", live: "#", image: "/placeholder.jpg"
+    description: "Intelligent healthcare NLP application that analyzes clinical reports, generates concise medical summaries, and extracts diseases.",
+    detailedDescription: "MediReporter is an AI-powered healthcare platform that summarizes clinical reports, extracts key medical entities, and identifies patient risks using NLP and machine learning. Built with Next.js, FastAPI, Python, and modern AI technologies for faster clinical insights.",
+    tags: ["PYTHON", "FASTAPI", "PYTORCH", "NLP", "BART", "BioBERT", "Hugging Face Transformers", "HTML", "CSS", "JavaScript", "Git", "GitHub"],
+    github: "https://github.com/adityakumarsingh01/Medical-Report-Summarization.git", linkedin: "https://lnkd.in/p/gZ_yEreu", image: "/project-image/MediReporter.png"
   }
 ];
 
@@ -84,7 +84,7 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <main className="max-w-7xl mx-auto px-6 md:px-12">
+    <main className="max-w-7xl mx-auto px-6 md:px-12" style={{ fontFamily: 'Cambria, serif' }}>
       {/* Hero Section */}
       <section className="min-h-[95vh] flex flex-col justify-center relative overflow-hidden pb-20 pt-32">
         <div className="w-full flex flex-col md:flex-row justify-between items-center relative z-10 gap-12 lg:gap-8">
@@ -96,7 +96,7 @@ export default function Home() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="flex flex-col items-center md:items-start w-full md:w-[60%]"
           >
-            <h1 className="text-[clamp(4rem,10vw,8rem)] font-black leading-[0.9] tracking-tighter text-gray-900 dark:text-white flex flex-col items-center md:items-start text-center md:text-left">
+            <h1 className="text-[clamp(4rem,10vw,8rem)] font-black leading-[0.9] tracking-tighter text-gray-900 dark:text-white flex flex-col items-center md:items-start text-center md:text-left" style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}>
               <span className="relative z-20">Aditya</span>
               <span className="relative z-10 text-gray-400 dark:text-gray-500 flex items-center gap-4 my-1 md:my-2">
                 <div className="w-[10vw] md:w-16 h-[3px] bg-gray-300 dark:bg-gray-700 hidden md:block"></div>
@@ -221,7 +221,7 @@ export default function Home() {
       {/* 3D Project Cards (Highlighted) */}
       <section className="py-24 border-t border-black/5 dark:border-white/5">
         <div className="flex justify-between items-end mb-12">
-          <h3 className="text-4xl font-black text-gray-900 dark:text-white">Selected <span className="text-gradient">Work</span></h3>
+          <h3 className="text-4xl font-black text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}>Selected <span className="text-gradient">Work</span></h3>
           <span className="text-gray-500 hidden md:block">Hover to interact</span>
         </div>
 
@@ -366,9 +366,17 @@ export default function Home() {
               </button>
 
               {/* Left Side: Visuals */}
-              <div className={`w-full md:w-2/5 h-64 md:h-auto bg-gradient-to-br ${gradients[highlightedProjects.findIndex(p => p.title === selectedId) % gradients.length]} relative flex flex-col justify-end p-8`}>
-                <div className="absolute inset-0 bg-black/20 mix-blend-overlay"></div>
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+              <div className={`w-full md:w-2/5 h-64 md:h-auto ${!selectedProject.image ? `bg-gradient-to-br ${gradients[highlightedProjects.findIndex(p => p.title === selectedId) % gradients.length]}` : 'bg-gray-900'} relative flex flex-col justify-end p-8`}>
+                {selectedProject.image && selectedProject.image !== "/placeholder.jpg" ? (
+                  <img src={selectedProject.image} alt={selectedProject.title} className="absolute inset-0 w-full h-full object-cover" />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-black/20 mix-blend-overlay"></div>
+                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+                  </>
+                )}
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
                 <h2 className="text-4xl md:text-5xl font-bold text-white relative z-10 drop-shadow-lg leading-tight capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
                   {selectedProject.title}
@@ -487,7 +495,7 @@ function Project3DCard({ project, index, layoutId }: { project: any, index: numb
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d", fontFamily: 'Cambria, serif' }}
       initial={{ opacity: 0, y: 50, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -524,7 +532,7 @@ function Project3DCard({ project, index, layoutId }: { project: any, index: numb
 
         <div className="p-6 flex flex-col flex-grow bg-white dark:bg-[#0a0026]" style={{ transform: "translateZ(20px)" }}>
           <div className="flex justify-between items-start mb-2">
-            <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all">{project.title}</h4>
+            <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>{project.title}</h4>
           </div>
           <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest mb-4">{project.date}</span>
 

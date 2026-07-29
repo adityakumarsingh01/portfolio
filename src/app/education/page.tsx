@@ -5,7 +5,7 @@ export default function EducationPage() {
   return (
     <main className="min-h-screen flex flex-col items-center pt-24 pb-12 px-6">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-4xl">
-        <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-12">Education</h1>
+        <h1 className="text-5xl md:text-8xl font-black mb-12 text-gray-900 dark:text-white capitalize tracking-wider text-center md:text-left" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>Education</h1>
 
         <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-[2px] before:bg-gradient-to-b before:from-transparent before:via-gray-300 dark:before:via-gray-800 before:to-transparent">
 

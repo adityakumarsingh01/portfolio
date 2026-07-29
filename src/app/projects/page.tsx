@@ -27,7 +27,7 @@ const allProjects = [
     description: "Intelligent healthcare NLP application that analyzes clinical reports, generates concise medical summaries, and extracts diseases.",
     detailedDescription: "MediReporter is an AI-powered healthcare platform that summarizes clinical reports, extracts key medical entities, and identifies patient risks using NLP and machine learning. Built with Next.js, FastAPI, Python, and modern AI technologies for faster clinical insights.",
     tags: ["PYTHON", "FASTAPI", "PYTORCH", "NLP", "BART", "BioBERT", "Hugging Face Transformers", "HTML", "CSS", "JavaScript", "Git", "GitHub"],
-    github: "https://github.com/adityakumarsingh01/Medical-Report-Summarization.git", linkedin: "https://lnkd.in/p/gZ_yEreu", image: "/placeholder.jpg"
+    github: "https://github.com/adityakumarsingh01/Medical-Report-Summarization.git", linkedin: "https://lnkd.in/p/gZ_yEreu", image: "/project-image/MediReporter.png"
   },
   {
     title: "InvestMate- Smart Investment System",
@@ -35,7 +35,7 @@ const allProjects = [
     description: "InvestMate - AI-Powered Smart Investment System",
     detailedDescription: "InvestMate is an AI-powered fintech platform that simplifies SIP planning through goal-based investment recommendations, live mutual fund data, SIP return projections, and an AI chatbot. Built with Django and Python, it enables smarter and more informed financial decisions.",
     tags: ["HTML5", "CSS3", "JAVASCRIPT", "DJANGO", "PYTHON", "SIP Calculator", "Live Mutual Fund Search", "SIP Return Projections", "Git", "GitHub"],
-    github: "https://github.com/adityakumarsingh01/InvestMate.git", image: "/placeholder.jpg"
+    github: "https://github.com/adityakumarsingh01/InvestMate.git", image: "/project-image/InvestMate.png"
   },
   {
     title: "IPL Match Winner Prediction",
@@ -43,7 +43,7 @@ const allProjects = [
     description: "Machine learning model to predict match winners using historical IPL match data.",
     detailedDescription: "IPL Match Winner Prediction is a machine learning application that predicts the winning team using historical IPL match data, team statistics, and match conditions. Built with Python and Scikit-learn, it provides accurate predictions through an interactive web interface.",
     tags: ["Python", "ML", "Pandas", "NumPy", "Random Forest Classifier", "Scikit-learn", "Matplotlib", "Seaborn", "Power BI"],
-    github: "https://github.com/adityakumarsingh01/IPL_MATCH-WINNER-PREDICTION.git", linkedin: "https://lnkd.in/p/gEHWU-7C", image: "/placeholder.jpg"
+    github: "https://github.com/adityakumarsingh01/IPL_MATCH-WINNER-PREDICTION.git", linkedin: "https://lnkd.in/p/gEHWU-7C", image: "/project-image/IPL Match Winner Prediction.png"
   },
   {
     title: "Taxi Trip Pricing Analysis",
@@ -51,7 +51,7 @@ const allProjects = [
     description: "Analyzed taxi trip pricing data to understand factors influencing fare amounts such as distance, duration, and time-based variations.",
     detailedDescription: "Analyzed taxi trip pricing data to understand factors influencing fare amounts such as distance, duration, passenger count, and time-based variations.Performed data cleaning, preprocessing, and exploratory data analysis(EDA) to identify patterns, outliers, and key pricing drivers.Built machine learning models to predict trip prices based on relevant features and evaluated model performance using standard metrics.",
     tags: ["Python", "Pandas", "NumPy", "ML", "Data Analysis", "DATA VISUALIZATION"],
-    github: "https://github.com/adityakumarsingh01/Taxi-Trip-Pricing-Prediction.git", image: "/placeholder.jpg"
+    github: "https://github.com/adityakumarsingh01/Taxi-Trip-Pricing-Prediction.git", image: "/project-image/Taxi Trip.jpg"
   },
   {
     title: "Exam Score Prediction",
@@ -59,7 +59,7 @@ const allProjects = [
     description: "Analyzed student exam score data to understand factors affecting academic performance.",
     detailedDescription: "Analyzed student exam score data to understand factors affecting academic performance such as study hours, previous scores, and other influencing variables. Performed data cleaning, preprocessing, and exploratory data analysis(EDA) to identify patterns, correlations, and key performance drivers.Built machine learning models to predict student scores and evaluated model performance using appropriate regression metrics.",
     tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "ML", "Data Analysis", "DATA VISUALIZATION"],
-    github: "https://github.com/adityakumarsingh01/Student-Exam-Score-Prediction-ML.git", image: "/placeholder.jpg"
+    github: "https://github.com/adityakumarsingh01/Student-Exam-Score-Prediction-ML.git", image: "/project-image/Exam Score.png"
   },
   {
     title: "Risk Behavior Analysis",
@@ -67,7 +67,7 @@ const allProjects = [
     description: "Interactive Power BI dashboard to analyze smoking and alcohol consumption patterns across different age groups.",
     detailedDescription: "Developed an interactive Power BI dashboard to analyze smoking and alcohol consumption patterns across different age groups.Used data analysis and visualization to identify risk categories, behavioral trends, and demographic insights.",
     tags: ["Python", "Pandas", "ML", "Matplotlib", "Seaborn", "Power BI", "Power Query", "Scikit-learn"],
-    github: "https://github.com/adityakumarsingh01/RISK-BEHAVIOR-ANALYSIS.git", linkedin: "https://lnkd.in/p/gpyXb-AC", image: "/placeholder.jpg"
+    github: "https://github.com/adityakumarsingh01/RISK-BEHAVIOR-ANALYSIS.git", linkedin: "https://lnkd.in/p/gpyXb-AC", image: "/project-image/Risk Behavior Analysis.png"
   },
   {
     title: "NYC-311 Noise Dashboard",
@@ -75,7 +75,7 @@ const allProjects = [
     description: "Analyzed NYC 311 noise complaint data (1M+ records) using Power BI and Excel.",
     detailedDescription: "Analyzed NYC 311 noise complaint data (1M+ records) using Power BI and Excel to study noise trends across boroughs and complaint types. Performed data cleaning, transformation, and modeling to identify high-noise zones, peak complaint hours, and recurring patterns. Built an interactive dashboard with KPIs, slicers, heatmaps, and visualizations to support data-driven urban noise monitoring.",
     tags: ["Excel", "Power BI", "Power Query", "Data Cleaning", "Data Visualization"],
-    github: "https://github.com/adityakumarsingh01/NYC-311-Noise-Dashboard.git", linkedin: "https://lnkd.in/p/gnhWFe79", image: "/placeholder.jpg"
+    github: "https://github.com/adityakumarsingh01/NYC-311-Noise-Dashboard.git", linkedin: "https://lnkd.in/p/gnhWFe79", image: "/project-image/NYC-311 Noise.png"
   },
   {
     title: "Adventure Work Sales Analysis",
@@ -83,7 +83,7 @@ const allProjects = [
     description: "Analyzed Adventure Works sales data using Excel and Power BI to identify trends in revenue and regional sales.",
     detailedDescription: "Analyzed Adventure Works sales data using Excel and Power BI to identify trends in revenue, product performance, and regional sales distribution. Performed data cleaning, transformation, and modeling to organize datasets and uncover key business insights. Built an interactive Power BI dashboard with KPIs, filters, and visualizations to track sales performance and support data-driven decision making.",
     tags: ["Power BI", "Power Query", "Time-Series Analysis"],
-    github: "https://github.com/adityakumarsingh01/Adventure-Works-Sales-Analysis.git", linkedin: "https://lnkd.in/p/gbRenScy", image: "/placeholder.jpg"
+    github: "https://github.com/adityakumarsingh01/Adventure-Works-Sales-Analysis.git", linkedin: "https://lnkd.in/p/gbRenScy", image: "/project-image/Adventure Works Sales.png"
   },
   {
     title: "Customer Behavior Analysis",
@@ -91,7 +91,7 @@ const allProjects = [
     description: "Analyzed customer purchase behavior using survey data collected through Google Forms.",
     detailedDescription: "To better understand modern consumer habits, this project analyzes a custom dataset collected via Google Forms. The data cleaning phase dealt with messy, free-text inputs, while the exploratory data analysis (EDA) phase uncovered fascinating correlations between demographic traits and purchasing preferences, specifically regarding online vs. in-store shopping.",
     tags: ["Google Form", "Python", "Pandas", "Data Cleaning"],
-    github: "https://github.com/adityakumarsingh01/Customer-Purchase-Behaviour-Analysis.git", linkedin: "https://lnkd.in/p/gXWEh5GP", image: "/placeholder.jpg"
+    github: "https://github.com/adityakumarsingh01/Customer-Purchase-Behaviour-Analysis.git", linkedin: "https://lnkd.in/p/gXWEh5GP", image: "/project-image/Customer Purchase Behavior.png"
   },
   {
     title: "COVID-19 Data Analysis",
@@ -99,7 +99,7 @@ const allProjects = [
     description: "Analyzed global COVID-19 data to understand trends in cases, deaths, recovery rates, and regional impacts.",
     detailedDescription: "Analyzed global COVID-19 data to understand trends in cases, deaths, recovery rates, and regional impact across different countries and continents. Performed data cleaning, preprocessing, and feature engineering to calculate key metrics such as recovery rate and fatality rate. Developed visualizations including bar charts, scatter plots, and pie charts to identify top affected countries, compare recovery vs fatality rates, and analyze continent-wise case distribution.",
     tags: ["Python", "Pandas", "Matplotlib", "Data Analysis"],
-    github: "https://github.com/adityakumarsingh01/COVID-19-Data-Analysis.git", linkedin: "https://www.linkedin.com/posts/aditya-kumar-singh-990377291_covid-19-data-analysis-and-visualization-activity-7278393925109796866-DluO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEa2H7wB3GZS-pnk6rWTCs78bg-tTWNujUks", image: "/placeholder.jpg"
+    github: "https://github.com/adityakumarsingh01/COVID-19-Data-Analysis.git", linkedin: "https://www.linkedin.com/posts/aditya-kumar-singh-990377291_covid-19-data-analysis-and-visualization-activity-7278393925109796866-DluO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEa2H7wB3GZS-pnk6rWTCs78bg-tTWNujUks", image: "/project-image/COVID-19.webp"
   }
 ];
 
@@ -137,7 +137,8 @@ export default function ProjectsPage() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-6xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white"
+          className="text-6xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white capitalize tracking-wider"
+          style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}
         >
           All <span className="text-gradient">Projects</span>
         </motion.h1>
@@ -189,6 +190,7 @@ export default function ProjectsPage() {
               layoutId={selectedId}
               className="bg-gray-50 dark:bg-[#0a0026] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col md:flex-row relative border border-white/10"
               onClick={(e) => e.stopPropagation()}
+              style={{ fontFamily: 'Cambria, serif' }}
             >
               {/* Close Button */}
               <button
@@ -199,9 +201,17 @@ export default function ProjectsPage() {
               </button>
 
               {/* Left Side: Visuals */}
-              <div className={`w-full md:w-2/5 h-64 md:h-auto bg-gradient-to-br ${gradients[allProjects.findIndex(p => p.title === selectedId) % gradients.length]} relative flex flex-col justify-end p-8`}>
-                <div className="absolute inset-0 bg-black/20 mix-blend-overlay"></div>
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+              <div className={`w-full md:w-2/5 h-64 md:h-auto ${!selectedProject.image ? `bg-gradient-to-br ${gradients[allProjects.findIndex(p => p.title === selectedId) % gradients.length]}` : 'bg-gray-900'} relative flex flex-col justify-end p-8`}>
+                {selectedProject.image && selectedProject.image !== "/placeholder.jpg" ? (
+                  <img src={selectedProject.image} alt={selectedProject.title} className="absolute inset-0 w-full h-full object-cover" />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-black/20 mix-blend-overlay"></div>
+                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+                  </>
+                )}
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
                 <h2 className="text-4xl md:text-5xl font-bold text-white relative z-10 drop-shadow-lg leading-tight capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
                   {selectedProject.title}
@@ -220,7 +230,7 @@ export default function ProjectsPage() {
                   {selectedProject.description}
                 </h3>
 
-                <div className="flex flex-wrap gap-x-3 gap-y-1 mb-8 text-blue-600 dark:text-blue-500 font-semibold italic tracking-wide uppercase text-sm md:text-base">
+                <div className="flex flex-wrap gap-x-3 gap-y-1 mb-8 text-blue-600 dark:text-blue-500 font-semibold tracking-wide uppercase text-sm md:text-base">
                   {selectedProject.tags.map((tag: string, i: number) => (
                     <React.Fragment key={tag}>
                       <span>{tag}</span>
@@ -301,7 +311,7 @@ function Project3DCard({ project, index, layoutId }: { project: any, index: numb
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d", fontFamily: 'Cambria, serif' }}
       initial={{ opacity: 0, y: 50, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -339,7 +349,7 @@ function Project3DCard({ project, index, layoutId }: { project: any, index: numb
         {/* Content Area */}
         <div className="p-6 flex flex-col flex-grow bg-white dark:bg-[#0a0026]" style={{ transform: "translateZ(20px)" }}>
           <div className="flex justify-between items-start mb-2">
-            <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all">{project.title}</h4>
+            <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>{project.title}</h4>
           </div>
           <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest mb-4">{project.date}</span>
 
