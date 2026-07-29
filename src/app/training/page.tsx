@@ -7,38 +7,39 @@ const trainings = [
   {
     role: "Data Science Trainee",
     company: "Lovely Professional University (LPU)",
-    date: "Jun 2025 – Aug 2025",
+    date: "Jun' 25 - Jul' 25",
     title: "From Data to Decisions: A Hands-On Approach to Data Science",
     icon: <BookOpen className="w-5 h-5" />,
+    link: "https://github.com/adityakumarsingh01/From-Data-to-Decisions-A-Hands-On-Approach-to-Data-Science.git",
     skills: ["Power BI", "Excel", "Python", "Pandas", "NumPy", "Scikit-learn", "ML", "VS Code"],
     bullets: [
-      "Gained hands-on experience in the complete data analysis lifecycle, transforming raw data into meaningful business insights.",
-      "Developed interactive dashboards, including the NYC 311 Noise Dashboard and Adventure Works Sales Analysis, to visualize complex datasets.",
-      "Conducted exploratory data analysis (EDA) and implemented basic machine learning algorithms for risk behavior analysis.",
-      "Applied the 'Data to Decisions' framework to systematically solve data problems from preprocessing to model deployment."
+      <>This training program provided hands-on experience in applying data science techniques to solve real-world problems, focusing on transforming raw data into meaningful business insights. It covered the complete data analysis lifecycle, from data collection to insight communication.</>,
+      <>I worked extensively with <strong>Power BI and Excel</strong> to build interactive dashboards such as the <strong>NYC 311 Noise Dashboard</strong> and <strong>Adventure Works Sales Analysis</strong>, where I analyzed large datasets and converted them into visually compelling and actionable insights for decision-making.</>,
+      <>The program also strengthened my understanding of the <strong>end-to-end data science workflow</strong>, including <strong>data cleaning, exploratory data analysis (EDA), feature understanding, and basic machine learning implementation.</strong> Through projects like <strong>Risk Behavior Analysis</strong>, I gained practical experience in identifying patterns, analyzing trends, and presenting results using data visualization tools.</>,
+      <>Additionally, I developed a strong foundation in the <strong>“Data to Decisions”</strong> framework, learning how to systematically approach data problems—starting from data acquisition and preprocessing to modeling and effectively communicating insights to support business and analytical decisions.</>,
     ]
   },
   {
     role: "Artificial Intelligence Intern",
     company: "Acmegrade",
-    date: "Oct 2023 – Dec 2023",
+    date: "Oct' 23 - Dec' 23",
     title: "Artificial Intelligence Internship",
     icon: <Briefcase className="w-5 h-5" />,
+    link: "https://lnkd.in/p/dKP23kjJ",
     skills: ["Python", "Data Analysis", "Artificial Intelligence", "Machine Learning"],
     bullets: [
-      "Acquired practical exposure to core artificial intelligence and machine learning methodologies.",
-      "Implemented data preprocessing pipelines and built basic predictive models to solve data-driven problems.",
-      "Explored real-world applications of AI, strengthening analytical thinking and problem-solving capabilities.",
-      "Developed a robust technical foundation in Python and established structured data science workflows."
+      <>Completed an internship in <strong>Artificial Intelligence</strong>, gaining practical exposure to core AI and machine learning concepts. Developed a strong understanding of data-driven problem solving, including data preprocessing, model building, and basic predictive analysis.</>,
+      <>During the internship, I worked on implementing machine learning techniques and explored real-world applications of AI. The experience enhanced my <strong>analytical thinking, problem-solving ability, and understanding of intelligent systems,</strong> while also strengthening my technical foundation in Python and data science workflows.</>,
+      <>This internship also helped me build discipline, consistency, and a professional approach toward solving complex problems using technology.</>
     ]
   }
 ];
 
 export default function TrainingPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-12">
+    <main className="max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-12" style={{ fontFamily: 'Cambria, serif' }}>
       <div className="mb-20">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-6xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white capitalize tracking-wider"
@@ -46,7 +47,7 @@ export default function TrainingPage() {
         >
           Professional <span className="text-blue-600 dark:text-blue-400">Training</span>
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
@@ -58,7 +59,7 @@ export default function TrainingPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
         {trainings.map((training, idx) => (
-          <motion.div 
+          <motion.div
             key={idx}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +70,7 @@ export default function TrainingPage() {
             <SpotlightCard className="h-full p-8 md:p-10 border border-black/5 dark:border-white/5 hover:border-blue-500/30 transition-colors group flex flex-col">
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <h3 
+                  <h3
                     className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors capitalize tracking-wider"
                     style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}
                   >
@@ -109,6 +110,12 @@ export default function TrainingPage() {
                     {skill}
                   </span>
                 ))}
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-800">
+                <a href={training.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-colors tracking-wider text-sm shadow-lg hover:scale-105 transform duration-300 w-full md:w-auto" style={{ fontFamily: 'Geist Sans, sans-serif' }}>
+                  View Certificate
+                </a>
               </div>
             </SpotlightCard>
           </motion.div>

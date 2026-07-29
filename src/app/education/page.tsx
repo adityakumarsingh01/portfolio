@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function EducationPage() {
   return (
-    <main className="min-h-screen flex flex-col items-center pt-24 pb-12 px-6">
+    <main className="min-h-screen flex flex-col items-center pt-24 pb-12 px-6" style={{ fontFamily: 'Cambria, serif' }}>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-4xl">
         <h1 className="text-5xl md:text-8xl font-black mb-12 text-gray-900 dark:text-white capitalize tracking-wider text-center md:text-left" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>Education</h1>
 

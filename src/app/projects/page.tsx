@@ -95,7 +95,7 @@ const allProjects = [
   },
   {
     title: "COVID-19 Data Analysis",
-    date: "Recent",
+    date: "Jan' 25",
     description: "Analyzed global COVID-19 data to understand trends in cases, deaths, recovery rates, and regional impacts.",
     detailedDescription: "Analyzed global COVID-19 data to understand trends in cases, deaths, recovery rates, and regional impact across different countries and continents. Performed data cleaning, preprocessing, and feature engineering to calculate key metrics such as recovery rate and fatality rate. Developed visualizations including bar charts, scatter plots, and pie charts to identify top affected countries, compare recovery vs fatality rates, and analyze continent-wise case distribution.",
     tags: ["Python", "Pandas", "Matplotlib", "Data Analysis"],
@@ -147,6 +147,7 @@ export default function ProjectsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl"
+          style={{ fontFamily: 'Cambria, serif' }}
         >
           A comprehensive archive of my work in machine learning, data engineering, and full-stack AI development.
         </motion.p>

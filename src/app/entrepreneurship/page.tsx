@@ -5,9 +5,9 @@ import { SpotlightCard } from "@/components/SpotlightCard";
 
 export default function EntrepreneurshipPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-12">
+    <main className="max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-12" style={{ fontFamily: 'Cambria, serif' }}>
       <div className="mb-20">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-6xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white capitalize tracking-wider"
@@ -15,11 +15,12 @@ export default function EntrepreneurshipPage() {
         >
           Entrepreneurship <span className="text-orange-600 dark:text-orange-400">Journey</span>
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl"
+          style={{ fontFamily: 'Cambria, serif' }}
         >
           Building innovative solutions, driving business growth, and turning ideas into impactful products.
         </motion.p>
@@ -32,7 +33,7 @@ export default function EntrepreneurshipPage() {
               <div className="mb-8">
                 <span className="text-sm font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest mb-3 block">Startup Venture</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
-                  Custom Print – Print-on-Demand Merchandise Platform
+                  Custom Print <br /> Print-on-Demand Merchandise Platform
                 </h2>
                 <div className="flex flex-wrap items-center gap-3 text-sm font-medium text-gray-600 dark:text-gray-400 mb-6">
                   <span className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">Founder</span>
@@ -49,10 +50,10 @@ export default function EntrepreneurshipPage() {
 
               <div className="space-y-6 text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-10">
                 <p>
-                  Custom Print is a full-stack print-on-demand (POD) e-commerce platform that enables users to design and order personalized merchandise, including T-shirts, hoodies, mugs, phone cases, tote bags, posters, pens, and water bottles. 
+                  Custom Print is a full-stack print-on-demand (POD) e-commerce platform that enables users to design and order personalized merchandise, including T-shirts, hoodies, mugs, phone cases, tote bags, posters, pens, and water bottles.
                 </p>
                 <p>
-                  The platform allows customers to customize products using their own artwork or choose from a library of over 1,000 original designs. The project was selected for exhibition at LPU's Innotek Annual Innovation & Graduating Project Expo 2025, where it was presented to faculty members, industry experts, and fellow students as an innovative entrepreneurial solution.
+                  The platform allows customers to customize products using their own artwork or choose from a library of over <strong>1,000 original designs.</strong> The project was selected for exhibition at <strong>LPU's Innotek Annual Innovation & Graduating Project Expo 2025</strong>, where it was presented to faculty members, industry experts, and fellow students as an innovative entrepreneurial solution.
                 </p>
               </div>
 
@@ -62,11 +63,11 @@ export default function EntrepreneurshipPage() {
                   {[
                     { icon: <Rocket className="w-5 h-5 text-purple-500" />, text: "Founder of a print-on-demand startup focused on personalized merchandise." },
                     { icon: <ShoppingBag className="w-5 h-5 text-blue-500" />, text: "Built a complete e-commerce platform supporting product customization and order management." },
-                    { icon: <Palette className="w-5 h-5 text-pink-500" />, text: "Designed and maintained a catalog of 1,000+ original product designs." },
-                    { icon: <Users className="w-5 h-5 text-green-500" />, text: "Served 50+ customers and successfully fulfilled 50+ orders." },
-                    { icon: <DollarSign className="w-5 h-5 text-yellow-500" />, text: "Generated ₹20,000+ in revenue." },
-                    { icon: <Globe className="w-5 h-5 text-indigo-500" />, text: "Led a 5-member team covering development, design, operations, and marketing." },
-                    { icon: <Award className="w-5 h-5 text-orange-500" />, text: "Selected to showcase the startup at LPU's Innotek Expo 2025." },
+                    { icon: <Palette className="w-5 h-5 text-pink-500" />, text: <>Designed and maintained a catalog of <strong>1,000+ original product designs</strong>.</> },
+                    { icon: <Users className="w-5 h-5 text-green-500" />, text: <>Served <strong>50+ customers</strong> and successfully fulfilled <strong>50+ orders</strong>.</> },
+                    { icon: <DollarSign className="w-5 h-5 text-yellow-500" />, text: <>Generated <strong>₹20,000+</strong> in revenue.</> },
+                    { icon: <Globe className="w-5 h-5 text-indigo-500" />, text: <>Led a <strong>5-member team</strong> covering development, design, operations, and marketing.</> },
+                    { icon: <Award className="w-5 h-5 text-orange-500" />, text: <>Selected to showcase the startup at <strong>LPU's Innotek Annual Innovation & Graduating Project Expo 2025</strong>.</> },
                   ].map((highlight, i) => (
                     <div key={i} className="flex items-start gap-3 bg-gray-50 dark:bg-white/5 p-4 rounded-xl">
                       <div className="shrink-0 mt-0.5">{highlight.icon}</div>
@@ -85,13 +86,13 @@ export default function EntrepreneurshipPage() {
                 Certificate of Participation
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                <strong className="text-gray-900 dark:text-white">LPU Student Welfare Wing</strong> — Awarded for exhibiting Custom Print at LPU's Innotek Annual Innovation & Graduating Project Expo 2025, recognizing the project's innovation and entrepreneurial potential.
+                <strong className="text-gray-900 dark:text-white">LPU Student Welfare Wing</strong> - Awarded for exhibiting Custom Print at LPU's Innotek Annual Innovation & Graduating Project Expo 2025, recognizing the project's innovation and entrepreneurial potential.
               </p>
               <div className="relative rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
-                <img 
-                  src="/certificates/Innotek Event Participated.jpg" 
-                  alt="Innotek Certificate of Participation" 
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" 
+                <img
+                  src="/certificates/Innotek Event Participated.jpg"
+                  alt="Innotek Certificate of Participation"
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </SpotlightCard>
@@ -125,7 +126,7 @@ export default function EntrepreneurshipPage() {
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 capitalize tracking-wider flex items-center gap-2" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
                 <Code className="w-5 h-5 text-blue-500" /> Technologies Used
               </h3>
-              
+
               <div className="space-y-6">
                 <div>
                   <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
@@ -170,6 +171,6 @@ export default function EntrepreneurshipPage() {
           </motion.div>
         </div>
       </div>
-    </main>
+    </main >
   );
 }

@@ -38,7 +38,7 @@ const hackathons = [
 
 export default function CertificatesPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-12">
+    <main className="max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-12" style={{ fontFamily: 'Cambria, serif' }}>
       <div className="mb-20">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

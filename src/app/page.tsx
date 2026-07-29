@@ -375,7 +375,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
                   </>
                 )}
-                
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
                 <h2 className="text-4xl md:text-5xl font-bold text-white relative z-10 drop-shadow-lg leading-tight capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
@@ -391,11 +391,11 @@ export default function Home() {
                   </span>
                 </div>
 
-                <h3 className="text-lg md:text-xl font-bold italic text-gray-900 dark:text-white leading-tight mb-6 capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white leading-tight mb-6 capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
                   {selectedProject.description}
                 </h3>
 
-                <div className="flex flex-wrap gap-x-3 gap-y-1 mb-8 text-blue-600 dark:text-blue-500 font-semibold italic tracking-wide uppercase text-sm md:text-base">
+                <div className="flex flex-wrap gap-x-3 gap-y-1 mb-8 text-blue-600 dark:text-blue-500 font-semibold tracking-wide uppercase text-sm md:text-base">
                   {selectedProject.tags.map((tag: string, i: number) => (
                     <React.Fragment key={tag}>
                       <span>{tag}</span>
@@ -516,7 +516,7 @@ function Project3DCard({ project, index, layoutId }: { project: any, index: numb
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
             </>
           )}
-          
+
           <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <span className="text-white font-bold tracking-wider text-sm drop-shadow-md">Explore Project</span>
           </div>
