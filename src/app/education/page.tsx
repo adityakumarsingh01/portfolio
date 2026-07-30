@@ -19,7 +19,7 @@ export default function EducationPage() {
             <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[var(--background)] bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
               🎓
             </div>
-            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-8 rounded-[2rem]">
+            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 md:p-8 rounded-[2rem]">
               <div className="flex flex-col mb-2">
                 <span className="text-blue-500 font-mono text-xs uppercase tracking-widest font-bold mb-2">Aug' 23 - Present</span>
                 <h3 className="font-bold text-2xl text-gray-900 dark:text-white">B.Tech. (Hons.) (CSE- Data Science and Data Engineering)</h3>
@@ -39,7 +39,7 @@ export default function EducationPage() {
             <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[var(--background)] bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
               🏫
             </div>
-            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-8 rounded-[2rem]">
+            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 md:p-8 rounded-[2rem]">
               <div className="flex flex-col mb-2">
                 <span className="text-blue-500 font-mono text-xs uppercase tracking-widest font-bold mb-2">Apr’ 20 – Mar’ 23</span>
                 <h3 className="font-bold text-2xl text-gray-900 dark:text-white">Intermediate</h3>
@@ -58,7 +58,7 @@ export default function EducationPage() {
             <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[var(--background)] bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
               📚
             </div>
-            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-8 rounded-[2rem]">
+            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 md:p-8 rounded-[2rem]">
               <div className="flex flex-col mb-2">
                 <span className="text-blue-500 font-mono text-xs uppercase tracking-widest font-bold mb-2">Apr’ 19 – Mar’ 20</span>
                 <h3 className="font-bold text-2xl text-gray-900 dark:text-white">Matriculation</h3>

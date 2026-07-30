@@ -172,7 +172,7 @@ export default function Home() {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]"
         >
           {/* About Card */}
-          <SpotlightCard className="md:col-span-2 p-8 flex flex-col justify-center group border border-black/5 dark:border-white/5">
+          <SpotlightCard className="md:col-span-2 p-6 md:p-8 flex flex-col justify-center group border border-black/5 dark:border-white/5">
             <BrainCircuit className="w-10 h-10 text-blue-500 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-300" />
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">The Mindset</h3>
             <p className="text-gray-600 dark:text-gray-400 text-lg">
@@ -181,7 +181,7 @@ export default function Home() {
           </SpotlightCard>
 
           {/* ML Skill Card */}
-          <SpotlightCard className="p-8 flex flex-col justify-between group border border-black/5 dark:border-white/5">
+          <SpotlightCard className="p-6 md:p-8 flex flex-col justify-between group border border-black/5 dark:border-white/5">
             <Cpu className="w-10 h-10 text-purple-500 dark:text-purple-400 group-hover:rotate-12 transition-transform duration-300" />
             <div>
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Machine Learning</h4>
@@ -190,7 +190,7 @@ export default function Home() {
           </SpotlightCard>
 
           {/* Engineering Card */}
-          <SpotlightCard className="p-8 flex flex-col justify-between group border border-black/5 dark:border-white/5">
+          <SpotlightCard className="p-6 md:p-8 flex flex-col justify-between group border border-black/5 dark:border-white/5">
             <Database className="w-10 h-10 text-blue-500 dark:text-blue-400 group-hover:-translate-y-2 transition-transform duration-300" />
             <div>
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Data Engineering</h4>
@@ -199,7 +199,7 @@ export default function Home() {
           </SpotlightCard>
 
           {/* Web Card */}
-          <SpotlightCard className="p-8 flex flex-col justify-between group border border-black/5 dark:border-white/5">
+          <SpotlightCard className="p-6 md:p-8 flex flex-col justify-between group border border-black/5 dark:border-white/5">
             <Code className="w-10 h-10 text-pink-500 dark:text-pink-400 group-hover:rotate-6 transition-transform duration-300" />
             <div>
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Full-Stack AI</h4>
@@ -209,7 +209,7 @@ export default function Home() {
 
           {/* Experience Card */}
           <Link href="/projects" className="md:col-span-1 block h-full">
-            <SpotlightCard className="h-full p-8 flex flex-col justify-center items-center text-center group border border-black/5 dark:border-white/5">
+            <SpotlightCard className="h-full p-6 md:p-8 flex flex-col justify-center items-center text-center group border border-black/5 dark:border-white/5">
               <Zap className="w-10 h-10 text-yellow-500 dark:text-yellow-400 mb-4 group-hover:scale-125 transition-transform duration-300" />
               <h4 className="text-4xl font-black text-gray-900 dark:text-white mb-2">11+</h4>
               <p className="text-gray-600 dark:text-gray-400">Data & AI Projects Completed</p>
@@ -253,7 +253,7 @@ export default function Home() {
 
         <div className="lg:w-2/3 flex flex-col gap-6">
           <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20 }}>
-            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Machine Learning</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                 Build predictive and intelligent AI solutions using <strong className="text-gray-900 dark:text-white">Scikit-learn, Pandas, NumPy, and XGBoost</strong> with expertise in feature engineering, model training, evaluation, AutoML workflows, and supervised learning algorithms.
@@ -262,7 +262,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }}>
-            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Data Analysis</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                 Perform end-to-end data analysis including <strong className="text-gray-900 dark:text-white">EDA, data cleaning, preprocessing, feature engineering, statistical analysis, and dataset profiling</strong> to uncover actionable business insights.
@@ -271,7 +271,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.2 }}>
-            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Data Visualization</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                 Develop interactive dashboards and analytical reports using <strong className="text-gray-900 dark:text-white">Power BI, Recharts, Matplotlib, and Excel</strong>, enabling clear visualization of trends, KPIs, and model performance.
@@ -280,7 +280,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.3 }}>
-            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">AI & Natural Language Processing (NLP)</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                 Develop intelligent AI applications using <strong className="text-gray-900 dark:text-white">PyTorch, Hugging Face Transformers, BART, BioBERT, and NLP techniques</strong> for text summarization, entity extraction, classification, and AI-assisted workflows.
@@ -289,7 +289,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.4 }}>
-            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Full-Stack AI Development</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                 Design and develop modern AI-powered web applications using <strong className="text-gray-900 dark:text-white">Next.js, React, TypeScript, Tailwind CSS, FastAPI, REST APIs, and Axios</strong>, integrating machine learning models with responsive user interfaces.
@@ -298,7 +298,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.5 }}>
-            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Data Engineering & Big Data</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                 Experience working with <strong className="text-gray-900 dark:text-white">Hadoop, Hive, HBase, Spark, Kafka, Airflow, and Sqoop</strong> for distributed data processing, storage, and analytics pipelines.
@@ -307,7 +307,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.6 }}>
-            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Tools & Technologies</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                 Proficient in <strong className="text-gray-900 dark:text-white">Git/GitHub, VS Code, Jupyter Notebook, Docker, MySQL, PostgreSQL, REST APIs, Postman, Vercel, Render, and Linux</strong>, following modern software development practices.
@@ -316,7 +316,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.7 }}>
-            <SpotlightCard className="p-8 md:p-12 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Soft Skills & Ethics</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                 Strong analytical thinking, problem-solving, communication, teamwork, adaptability, leadership, debugging, and solution-oriented development with a focus on writing clean and scalable code.
@@ -384,7 +384,7 @@ export default function Home() {
               </div>
 
               {/* Right Side: Details */}
-              <div className="w-full md:w-3/5 p-8 md:p-12 flex flex-col">
+              <div className="w-full md:w-3/5 p-6 md:p-12 flex flex-col">
                 <div className="flex justify-start mb-4">
                   <span className="text-sm font-mono text-gray-500 dark:text-gray-400 uppercase tracking-widest">
                     {selectedProject.date}

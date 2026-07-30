@@ -69,7 +69,7 @@ export default function TrainingPage() {
             transition={{ delay: idx * 0.1 }}
             className="h-full"
           >
-            <SpotlightCard className="h-full p-8 md:p-10 border border-black/5 dark:border-white/5 hover:border-blue-500/30 transition-colors group flex flex-col">
+            <SpotlightCard className="h-full p-6 md:p-10 border border-black/5 dark:border-white/5 hover:border-blue-500/30 transition-colors group flex flex-col">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h3

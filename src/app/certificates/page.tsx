@@ -132,7 +132,7 @@ export default function CertificatesPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/80 to-white/50 dark:from-black/95 dark:via-black/80 dark:to-black/50"></div>
                   </div>
                 )}
-                <div className="p-8 flex flex-col justify-between h-full relative z-10">
+                <div className="p-6 md:p-8 flex flex-col justify-between h-full relative z-10">
                   <div className="flex justify-between items-start mb-6">
                     <span className="text-[10px] font-mono text-yellow-600 dark:text-yellow-400 uppercase tracking-widest block mb-3 drop-shadow-sm">{hack.issuer}</span>
                     {hack.date && (

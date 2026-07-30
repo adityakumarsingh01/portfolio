@@ -17,7 +17,7 @@ export default function ContactPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }} className="lg:col-span-2">
-          <SpotlightCard className="p-8 md:p-10 border border-black/5 dark:border-white/5 h-full flex flex-col justify-between">
+          <SpotlightCard className="p-6 md:p-10 border border-black/5 dark:border-white/5 h-full flex flex-col justify-between">
             <div>
               <div className="w-16 h-16 bg-blue-50 dark:bg-blue-500/10 rounded-full flex items-center justify-center mb-8 border border-blue-200 dark:border-blue-500/20">
                 <Mail className="w-8 h-8 text-blue-600 dark:text-blue-400" />
@@ -58,7 +58,7 @@ export default function ContactPage() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="lg:col-span-3">
-          <SpotlightCard className="p-8 md:p-10 border border-black/5 dark:border-white/5 h-full">
+          <SpotlightCard className="p-6 md:p-10 border border-black/5 dark:border-white/5 h-full">
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-8" style={{ fontVariant: 'small-caps' }}>Send a Message</h3>
 
             <form className="flex flex-col gap-6" action="https://formsubmit.co/adityasingh81201@gmail.com" method="POST">

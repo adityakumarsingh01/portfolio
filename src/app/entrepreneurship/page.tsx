@@ -29,7 +29,7 @@ export default function EntrepreneurshipPage() {
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
         <div className="xl:col-span-2 space-y-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <SpotlightCard className="p-8 md:p-10 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-10 border border-black/5 dark:border-white/5">
               <div className="mb-8">
                 <span className="text-sm font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest mb-3 block">Startup Venture</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
@@ -81,7 +81,7 @@ export default function EntrepreneurshipPage() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <SpotlightCard className="p-8 md:p-10 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-10 border border-black/5 dark:border-white/5">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
                 Certificate of Participation
               </h3>
@@ -102,7 +102,7 @@ export default function EntrepreneurshipPage() {
 
         <div className="space-y-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            <SpotlightCard className="p-8 border border-black/5 dark:border-white/5 h-full">
+            <SpotlightCard className="p-6 md:p-8 border border-black/5 dark:border-white/5 h-full">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>Impact</h3>
               <div className="space-y-4">
                 {[
@@ -122,7 +122,7 @@ export default function EntrepreneurshipPage() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-            <SpotlightCard className="p-8 border border-black/5 dark:border-white/5">
+            <SpotlightCard className="p-6 md:p-8 border border-black/5 dark:border-white/5">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 capitalize tracking-wider flex items-center gap-2" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
                 <Code className="w-5 h-5 text-blue-500" /> Technologies Used
               </h3>

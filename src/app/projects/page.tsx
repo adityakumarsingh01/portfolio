@@ -220,7 +220,7 @@ export default function ProjectsPage() {
               </div>
 
               {/* Right Side: Details */}
-              <div className="w-full md:w-3/5 p-8 md:p-12 flex flex-col">
+              <div className="w-full md:w-3/5 p-6 md:p-12 flex flex-col">
                 <div className="flex justify-start mb-4">
                   <span className="text-sm font-mono text-gray-500 dark:text-gray-400 uppercase tracking-widest">
                     {selectedProject.date}
