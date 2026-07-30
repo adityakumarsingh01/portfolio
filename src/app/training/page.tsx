@@ -11,6 +11,7 @@ const trainings = [
     title: "From Data to Decisions: A Hands-On Approach to Data Science",
     icon: <BookOpen className="w-5 h-5" />,
     link: "https://github.com/adityakumarsingh01/From-Data-to-Decisions-A-Hands-On-Approach-to-Data-Science.git",
+    certificateImage: "/certificates/From%20Data%20to%20Decisions.jpg",
     skills: ["Power BI", "Excel", "Python", "Pandas", "NumPy", "Scikit-learn", "ML", "VS Code"],
     bullets: [
       <>This training program provided hands-on experience in applying data science techniques to solve real-world problems, focusing on transforming raw data into meaningful business insights. It covered the complete data analysis lifecycle, from data collection to insight communication.</>,
@@ -26,6 +27,7 @@ const trainings = [
     title: "Artificial Intelligence Internship",
     icon: <Briefcase className="w-5 h-5" />,
     link: "https://lnkd.in/p/dKP23kjJ",
+    certificateImage: "/certificates/Aditya%20Kumar%20Singh_Internship%20Completion.jpg",
     skills: ["Python", "Data Analysis", "Artificial Intelligence", "Machine Learning"],
     bullets: [
       <>Completed an internship in <strong>Artificial Intelligence</strong>, gaining practical exposure to core AI and machine learning concepts. Developed a strong understanding of data-driven problem solving, including data preprocessing, model building, and basic predictive analysis.</>,
@@ -94,6 +96,16 @@ export default function TrainingPage() {
                 <span className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 block">Program</span>
                 <p className="text-lg font-medium text-gray-800 dark:text-gray-200 capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>{training.title}</p>
               </div>
+
+              {training.certificateImage && (
+                <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg mb-8">
+                  <img
+                    src={training.certificateImage}
+                    alt={`${training.title} Certificate`}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              )}
 
               <ul className="space-y-4 mb-8 flex-grow">
                 {training.bullets.map((bullet, i) => (
