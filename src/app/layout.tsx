@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aditya Kumar Singh | Data Science & Engineering Portfolio",
+  title: "Aditya Kumar Singh",
   description: "Professional portfolio of Aditya Kumar Singh, Data Science and Data Engineering student. Exploring ML, AI, and Data Analytics.",
+  icons: {
+    icon: '/profile.jpg',
+  },
 };
 
 export default function RootLayout({
