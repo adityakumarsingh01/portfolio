@@ -124,19 +124,19 @@ export default function Home() {
             transition={{ delay: 0.2, type: "spring", stiffness: 150, damping: 20 }}
             className="w-full md:w-[40%] flex justify-center md:justify-end"
           >
-            <div className="relative w-64 h-64 md:w-[28rem] md:h-[28rem] rounded-full md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-gray-100 dark:border-gray-900 z-30">
+            <div className="relative w-64 h-64 md:w-[28rem] md:h-[28rem] rounded-full md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-gray-100 dark:border-gray-900 z-30 group cursor-pointer">
               <Image
                 src="/profile.jpg"
                 alt="Aditya Kumar Singh"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
               />
             </div>
           </motion.div>
         </div>
 
         {/* Scroll Badge */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0 md:right-12 z-20 flex justify-center opacity-70">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex justify-center opacity-70">
           <div className="relative w-28 h-28 md:w-36 md:h-36 animate-[spin_15s_linear_infinite]">
             <svg viewBox="0 0 100 100" className="w-full h-full fill-gray-900 dark:fill-white">
               <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
