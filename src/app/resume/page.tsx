@@ -21,7 +21,7 @@ export default function ResumePage() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.1 }}
-          className="w-full lg:w-1/3 flex flex-col gap-6 lg:sticky lg:top-32"
+          className="w-full lg:w-1/3 flex flex-col gap-6 lg:sticky lg:top-32 order-2 lg:order-1"
         >
           <SpotlightCard className="p-6 md:p-8 border border-black/5 dark:border-white/5 flex flex-col gap-6">
             <div>
@@ -74,7 +74,7 @@ export default function ResumePage() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
-          className="w-full lg:w-2/3"
+          className="w-full lg:w-2/3 order-1 lg:order-2"
         >
           <SpotlightCard className="p-2 md:p-4 border border-black/5 dark:border-white/5 rounded-[2rem] group cursor-pointer relative overflow-hidden">
             <a href="/resume/Aditya%20Kumar%20Singh.pdf" target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden rounded-xl bg-white border border-gray-100 dark:border-gray-800 shadow-inner">
