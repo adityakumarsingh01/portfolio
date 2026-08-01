@@ -47,7 +47,7 @@ export default function CertificatesPage() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-6xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white capitalize tracking-wider"
+          className="text-4xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white capitalize tracking-wider"
           style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}
         >
           Certifications & <span className="text-purple-600 dark:text-purple-400">Awards</span>

@@ -44,7 +44,7 @@ export default function TrainingPage() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-6xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white capitalize tracking-wider"
+          className="text-4xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white capitalize tracking-wider"
           style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}
         >
           Professional <span className="text-blue-600 dark:text-blue-400">Training</span>
@@ -70,7 +70,7 @@ export default function TrainingPage() {
             className="h-full"
           >
             <SpotlightCard className="h-full p-6 md:p-10 border border-black/5 dark:border-white/5 hover:border-blue-500/30 transition-colors group flex flex-col">
-              <div className="flex items-start justify-between mb-6">
+              <div className="flex items-start justify-between gap-4 mb-6">
                 <div>
                   <h3
                     className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors capitalize tracking-wider"
