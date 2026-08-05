@@ -81,7 +81,7 @@ export default function CertificatesPage() {
 
                 {cert.image && (
                   <div className="absolute inset-0 z-0">
-                    <img src={cert.image} alt={cert.title} className="w-full h-full object-cover blur-[1px] opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-700" />
+                    <img src={cert.image} alt={cert.title} className="w-full h-full object-cover opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-500 ease-out will-change-transform" />
                     <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/80 to-white/50 dark:from-black/95 dark:via-black/80 dark:to-black/50"></div>
                   </div>
                 )}
@@ -128,7 +128,7 @@ export default function CertificatesPage() {
                 </a>
                 {hack.image && (
                   <div className="absolute inset-0 z-0">
-                    <img src={hack.image} alt={hack.title} className="w-full h-full object-cover blur-[1px] opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-700" />
+                    <img src={hack.image} alt={hack.title} className="w-full h-full object-cover opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-500 ease-out will-change-transform" />
                     <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/80 to-white/50 dark:from-black/95 dark:via-black/80 dark:to-black/50"></div>
                   </div>
                 )}

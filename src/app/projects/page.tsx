@@ -320,11 +320,11 @@ function Project3DCard({ project, index, layoutId }: { project: any, index: numb
       className="relative w-full h-[450px] rounded-3xl cursor-pointer group perspective-1000"
     >
       <div
-        className="absolute inset-0 rounded-3xl bg-black/40 dark:bg-white/5 border border-black/10 dark:border-white/10 overflow-hidden flex flex-col transition-all duration-300 group-hover:border-white/20"
+        className="absolute inset-0 rounded-3xl bg-black/40 dark:bg-white/5 border border-black/10 dark:border-white/10 overflow-hidden flex flex-col transition-colors duration-300 group-hover:border-white/20"
         style={{ transform: "translateZ(30px)" }}
       >
         {/* Card Header */}
-        <div className={`h-40 ${!project.image ? `bg-gradient-to-br ${gradients[index % gradients.length]}` : 'bg-gray-200 dark:bg-gray-800'} relative overflow-hidden group-hover:scale-105 transition-transform duration-500`}>
+        <div className={`h-40 ${!project.image ? `bg-gradient-to-br ${gradients[index % gradients.length]}` : 'bg-gray-200 dark:bg-gray-800'} relative overflow-hidden group-hover:scale-105 transition-transform duration-500 ease-out will-change-transform`}>
           {project.image && project.image !== "/placeholder.jpg" ? (
             <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
           ) : (
@@ -366,8 +366,8 @@ function Project3DCard({ project, index, layoutId }: { project: any, index: numb
 
       {/* 3D Glow Shadow Effect */}
       <div
-        className={`absolute -inset-4 bg-gradient-to-br ${gradient} rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10`}
-        style={{ transform: "translateZ(-50px)" }}
+        className={`absolute -inset-4 bg-gradient-to-br ${gradient} rounded-[3rem] blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 ease-out -z-10`}
+        style={{ transform: "translateZ(-20px)" }}
       ></div>
     </motion.div>
   );

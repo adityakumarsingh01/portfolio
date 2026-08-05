@@ -38,6 +38,7 @@ const highlightedProjects = [
 
 const technicalStack = [
   { category: "Languages", skills: ["Python", "TypeScript", "Java", "C", "C++", "SQL", "JavaScript"] },
+  { category: "Core Computer Science", skills: ["Data Structures & Algorithms", "Object-Oriented Programming (OOP)"] },
   { category: "Machine Learning", skills: ["Scikit-Learn", "NumPy", "Pandas", "XGBoost", "Feature Engineering"] },
   { category: "AI / Deep Learning", skills: ["PyTorch", "NLP", "Hugging Face", "BART", "BioBERT", "Transformers"] },
   { category: "Data Engineering", skills: ["Hadoop", "Hive", "HBase", "Spark", "Kafka", "Airflow", "Sqoop"] },
@@ -94,7 +95,7 @@ export default function Home() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="flex flex-col items-center md:items-start w-full md:w-[60%]"
+            className="flex flex-col items-center md:items-start w-full md:w-[60%] order-2 md:order-1"
           >
             <h1 className="text-[clamp(4rem,10vw,8rem)] font-black leading-[0.9] tracking-tighter text-gray-900 dark:text-white flex flex-col items-center md:items-start text-center md:text-left" style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}>
               <span className="relative z-20">Aditya</span>
@@ -122,7 +123,7 @@ export default function Home() {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 150, damping: 20 }}
-            className="w-full md:w-[40%] flex justify-center md:justify-end"
+            className="w-full md:w-[40%] flex justify-center md:justify-end order-1 md:order-2"
           >
             <div className="relative w-64 h-64 md:w-[28rem] md:h-[28rem] rounded-full md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-gray-100 dark:border-gray-900 z-30 group cursor-pointer">
               <Image
@@ -211,7 +212,7 @@ export default function Home() {
           <Link href="/projects" className="md:col-span-1 block h-full">
             <SpotlightCard className="h-full p-6 md:p-8 flex flex-col justify-center items-center text-center group border border-black/5 dark:border-white/5">
               <Zap className="w-10 h-10 text-yellow-500 dark:text-yellow-400 mb-4 group-hover:scale-125 transition-transform duration-300" />
-              <h4 className="text-4xl font-black text-gray-900 dark:text-white mb-2">11+</h4>
+              <h4 className="text-4xl font-black text-gray-900 dark:text-white mb-2">12+</h4>
               <p className="text-gray-600 dark:text-gray-400">Data & AI Projects Completed</p>
             </SpotlightCard>
           </Link>

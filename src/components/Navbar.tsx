@@ -41,7 +41,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <Link href="/contact" className="hidden sm:flex bg-white text-black px-6 py-2.5 rounded-full text-[13px] font-bold tracking-widest hover:scale-105 transition-transform items-center justify-center whitespace-nowrap" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+          <Link href="/contact" className="flex bg-white text-black px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-[13px] font-bold tracking-widest hover:scale-105 transition-transform items-center justify-center whitespace-nowrap" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
             Let's Talk!
           </Link>
           
