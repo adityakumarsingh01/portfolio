@@ -112,7 +112,7 @@ export default function Home() {
               className="mt-8 flex justify-center md:justify-start w-full"
             >
               <p className="text-[10px] md:text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] leading-loose max-w-lg text-center md:text-left">
-                DATA SCIENTIST / MACHINE LEARNING / AI PLATFORMS / FULL-STACK DEV / ENGINEERING
+                ASPIRING AI ENGINEER / MACHINE LEARNING / DATA SCIENCE / FULL-STACK DEVELOPMENT
               </p>
             </motion.div>
           </motion.div>
