@@ -1,9 +1,37 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Send, MapPin, Phone } from "lucide-react";
 import { SpotlightCard } from "@/components/SpotlightCard";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ firstName: "", lastName: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
   return (
     <main className="max-w-6xl mx-auto px-6 md:px-12 pt-24 pb-16" style={{ fontFamily: 'Cambria, serif' }}>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
@@ -61,32 +89,38 @@ export default function ContactPage() {
           <SpotlightCard className="p-6 md:p-10 border border-black/5 dark:border-white/5 h-full">
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-8" style={{ fontVariant: 'small-caps' }}>Send a Message</h3>
 
-            <form className="flex flex-col gap-6" action="https://formsubmit.co/adityasingh81201@gmail.com" method="POST">
-              <input type="hidden" name="_captcha" value="false" />
+            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">First Name</label>
-                  <input type="text" name="First Name" placeholder="Mukesh" className="w-full bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-gray-800 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-sans" required />
+                  <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="Mukesh" className="w-full bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-gray-800 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-sans" required disabled={status === "loading"} />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">Last Name</label>
-                  <input type="text" name="Last Name" placeholder="Rabbani" className="w-full bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-gray-800 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-sans" required />
+                  <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Rabbani" className="w-full bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-gray-800 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-sans" required disabled={status === "loading"} />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">Email Address</label>
-                <input type="email" name="email" placeholder="mukesh123@gmail.com" className="w-full bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-gray-800 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-sans" required />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="mukesh123@gmail.com" className="w-full bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-gray-800 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-sans" required disabled={status === "loading"} />
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">Message</label>
-                <textarea rows={6} name="message" placeholder="How can we work together?" className="w-full bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-gray-800 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none font-sans" required></textarea>
+                <textarea rows={6} name="message" value={formData.message} onChange={handleChange} placeholder="How can we work together?" className="w-full bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-gray-800 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none font-sans" required disabled={status === "loading"}></textarea>
               </div>
 
-              <button type="submit" className="mt-4 w-full md:w-auto px-10 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all flex justify-center items-center gap-3 text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1 font-sans tracking-wide">
-                Send Message <Send className="w-5 h-5" />
+              <button type="submit" disabled={status === "loading"} className="mt-4 w-full md:w-auto px-10 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all flex justify-center items-center gap-3 text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0 font-sans tracking-wide">
+                {status === "loading" ? "Sending..." : "Send Message"} {!status && <Send className="w-5 h-5" />}
               </button>
+
+              {status === "success" && (
+                <p className="text-green-600 dark:text-green-400 font-bold mt-2">Message sent successfully!</p>
+              )}
+              {status === "error" && (
+                <p className="text-red-600 dark:text-red-400 font-bold mt-2">Failed to send message. Please try again.</p>
+              )}
             </form>
           </SpotlightCard>
         </motion.div>
