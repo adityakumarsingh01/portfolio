@@ -212,7 +212,7 @@ export default function Home() {
           <Link href="/projects" className="md:col-span-1 block h-full">
             <SpotlightCard className="h-full p-6 md:p-8 flex flex-col justify-center items-center text-center group border border-black/5 dark:border-white/5">
               <Zap className="w-10 h-10 text-yellow-500 dark:text-yellow-400 mb-4 group-hover:scale-125 transition-transform duration-300" />
-              <h4 className="text-4xl font-black text-gray-900 dark:text-white mb-2">12+</h4>
+              <h4 className="text-4xl font-black text-gray-900 dark:text-white mb-2">20+</h4>
               <p className="text-gray-600 dark:text-gray-400">Data & AI Projects Completed</p>
             </SpotlightCard>
           </Link>
