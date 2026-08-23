@@ -11,6 +11,7 @@ export default function Navbar() {
   const links = [
     { name: "Overview", href: "/" },
     { name: "Projects", href: "/projects" },
+    { name: "Assessments", href: "/assessments" },
     { name: "Entrepreneurship", href: "/entrepreneurship" },
     { name: "Education", href: "/education" },
     { name: "Certificates", href: "/certificates" },
@@ -26,14 +27,14 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="fixed w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center mix-blend-difference text-white top-0"
       >
-        <Link href="/" className="font-black text-xl md:text-3xl tracking-tighter hover:opacity-80 transition-opacity" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+        <Link href="/" className="font-black text-xl md:text-2xl tracking-tighter hover:opacity-80 transition-opacity whitespace-nowrap" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
           Aditya Singh
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex gap-6 xl:gap-8 text-[13px] font-bold tracking-[0.2em]" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+        <div className="hidden xl:flex gap-6 2xl:gap-8 text-[13px] font-bold tracking-[0.2em]" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
           {links.map((link) => (
-            <Link key={link.name} href={link.href} className="hover:opacity-40 transition-opacity">
+            <Link key={link.name} href={link.href} className="hover:opacity-40 transition-opacity whitespace-nowrap">
               {link.name}
             </Link>
           ))}
@@ -47,7 +48,7 @@ export default function Navbar() {
           
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+            className="xl:hidden p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -62,7 +63,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-white dark:bg-black flex flex-col items-center justify-center lg:hidden"
+            className="fixed inset-0 z-40 bg-white dark:bg-black flex flex-col items-center justify-center xl:hidden"
           >
             <div className="flex flex-col items-center gap-8 text-2xl font-black" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
               {links.map((link) => (
