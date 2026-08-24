@@ -71,7 +71,7 @@ const assessmentsData: Assessment[] = [
     outcome: "Successfully completed the assessment workflow.",
     liveUrl: "https://mini-operations-erp-lake.vercel.app",
     githubUrl: "https://github.com/adityakumarsingh01/Mini-Operations-ERP.git",
-    screenshots: [],
+    screenshots: ["/assignment/FundsRoom.png"],
     publicStatus: "private",
     customComponent: (
       <div className="my-8 bg-blue-50 dark:bg-blue-900/10 p-6 md:p-8 rounded-2xl border border-blue-100 dark:border-blue-900/30">
@@ -187,7 +187,7 @@ const assessmentsData: Assessment[] = [
     outcome: "Completed the assigned implementation and submitted the final solution.",
     liveUrl: "https://aiproducthomepage.vercel.app/",
     githubUrl: "https://github.com/adityakumarsingh01/AI_Product_Homepage.git",
-    screenshots: [],
+    screenshots: ["/assignment/ACDYON TECHNOLOGIES.png"],
     publicStatus: "public",
     customComponent: (
       <div className="my-8 bg-blue-50 dark:bg-blue-900/10 p-6 md:p-8 rounded-2xl border border-blue-100 dark:border-blue-900/30">
@@ -223,50 +223,119 @@ const assessmentsData: Assessment[] = [
     screenshots: [],
     publicStatus: "public",
   },
-{
-    id: "insideiim",
-    company: "INSIDE IIM",
-    title: "InvestIQ - Technical Assessment",
-    type: "Industry / Recruitment Assessment",
-    category: "Other",
+  {
+    id: "insideiim-investiq",
+    company: "InsideIIM",
+    title: "InvestIQ — AI-Powered Investment Research Platform",
+    type: "Technical / Full-Stack / AI Assessment",
+    category: "AI / FinTech / Full Stack",
     date: "Jun 2026",
-    description: "Technical assignment completed as part of an internship/recruitment process, demonstrating my ability to understand requirements, develop a practical solution, and communicate the final implementation.",
-    objective: "Build an AI-powered investment research platform capable of analyzing companies using financial data, market information, news, risk indicators, and structured investment reasoning.",
+    duration: "",
+    description: "Built an AI-powered investment research platform that analyzes companies using financial data, market information, news context, risk factors, and AI-assisted reasoning to generate structured investment insights and recommendations.",
+    overview: "InvestIQ is an AI-powered investment research platform designed to simplify company research by combining financial data, market information, risk analysis, news context, and AI-assisted investment reasoning into a single research dashboard. The platform allows users to search for companies and receive structured financial insights, investment indicators, risk evaluation, scoring, and recommendations.",
+    objective: "The objective was to build a practical investment research platform that could reduce the effort required to analyze companies manually by bringing financial information, market context, AI analysis, and investment decision logic into one application.",
     scope: [
-      "Company Search",
-      "Financial Data Collection",
-      "Financial Analysis",
-      "News / Market Context",
-      "Risk Analysis",
-      "AI Reasoning",
-      "Investment Score",
-      "Recommendation / Decision"
+      "Company search and selection",
+      "Financial data retrieval",
+      "Company and market analysis",
+      "Investment indicator evaluation",
+      "Risk analysis",
+      "News and market context",
+      "AI-assisted financial analysis",
+      "Structured investment scoring",
+      "Investment recommendation",
+      "Interactive research dashboard",
+      "Responsive frontend experience",
+      "External API integration",
+      "API error and rate-limit handling"
     ],
-    myRole: "Independently built an end-to-end AI-powered investment research experience involving frontend UI, API routes, financial data orchestration, and AI reasoning.",
+    myRole: "Designed and developed the end-to-end application, including the frontend experience, API/service integration, financial-data integration, AI-assisted analysis workflow, investment scoring presentation, visualization, error handling, and deployment.",
     implementation: [
-      "Built responsive dashboard and financial metrics presentation",
-      "Orchestrated financial data retrieval via API layer",
-      "Integrated Gemini API for structured AI reasoning and risk analysis",
-      "Implemented scorecards and structured investment recommendations"
+      "Built the frontend using Next.js, React, TypeScript, and Tailwind CSS.",
+      "Created the company research and analysis workflow.",
+      "Implemented the analysis API flow used to process company research requests.",
+      "Integrated external financial-data APIs for company and market information.",
+      "Integrated AI-assisted analysis for interpreting financial and market information.",
+      "Designed structured investment analysis and recommendation output.",
+      "Implemented financial metrics, scorecards, charts, risk information, and analysis sections.",
+      "Used Recharts for financial data visualization where applicable.",
+      "Used structured validation with Zod where applicable.",
+      "Worked with a multi-agent analysis approach using LangGraph.",
+      "Handled external API failures, quota limitations, and endpoint issues.",
+      "Managed API credentials through environment variables.",
+      "Tested the application using real company examples such as Apple.",
+      "Prepared the application for web deployment."
     ],
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Gemini API", "Financial Modeling Prep API", "Recharts", "Zod", "Vercel"],
-    tools: [],
-    skills: ["Problem Solving", "Requirement Understanding", "Full Stack Development", "AI Integration", "API Orchestration"],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Gemini API",
+      "Finnhub API",
+      "Alpha Vantage API",
+      "Financial Modeling Prep API",
+      "LangGraph",
+      "Recharts",
+      "Zod"
+    ],
+    tools: [
+      "Git",
+      "GitHub",
+      "npm",
+      "Vercel",
+      "VS Code"
+    ],
+    skills: [
+      "Full-Stack Development",
+      "AI Integration",
+      "API Integration",
+      "Financial Data Analysis",
+      "Investment Research",
+      "Multi-Agent Systems",
+      "React Development",
+      "Next.js Development",
+      "TypeScript",
+      "Data Visualization",
+      "Responsive UI Development",
+      "Problem Solving",
+      "API Troubleshooting",
+      "Deployment"
+    ],
     challenges: [
-      "Gemini API quota/rate-limit issues resulting in 429 errors.",
-      "Legacy Financial Modeling Prep endpoints returning 403 errors.",
-      "Structuring AI output for predictable frontend rendering."
+      "Gemini API returned HTTP 429 quota and rate-limit errors during development.",
+      "Financial Modeling Prep produced HTTP 403 errors with legacy endpoints.",
+      "The application had to work with multiple external financial-data providers.",
+      "AI-generated analysis needed to be structured consistently for frontend rendering.",
+      "External API failures needed to be handled without breaking the research experience.",
+      "API credentials needed to be managed securely through environment variables."
     ],
     solution: [
-      "Adjusted architecture to handle API limitations instead of assuming unlimited requests.",
-      "Revised financial data integration to use supported endpoints.",
-      "Implemented Zod for structured validation of AI outputs."
+      "Adjusted the AI integration to account for Gemini quota and rate-limit limitations.",
+      "Moved toward supported financial-data sources and live data providers after encountering FMP endpoint issues.",
+      "Used service-layer/API architecture to separate external data retrieval from the frontend.",
+      "Structured analysis responses so the frontend could render predictable financial insights.",
+      "Added error-handling considerations around external API requests.",
+      "Used environment variables instead of exposing API credentials in source code."
     ],
-    outcome: "Successfully implemented an end-to-end AI-powered investment research experience.",
-    learnings: ["Managing AI API rate limits", "Structuring external API orchestration", "Validating AI responses with Zod"],
+    outcome: "Delivered a functional AI-powered investment research platform capable of combining financial information, market context, risk analysis, AI-assisted reasoning, and structured investment recommendations into a single web experience.",
+    learnings: [
+      "Integrating multiple external APIs into a full-stack application",
+      "Working with financial and market data",
+      "Handling API quotas and rate limits",
+      "Working with changing and deprecated API endpoints",
+      "Building AI-assisted application workflows",
+      "Designing structured AI outputs",
+      "Understanding multi-agent architecture",
+      "Building financial dashboards",
+      "Creating responsive React interfaces",
+      "Managing API credentials securely",
+      "Deploying AI-powered web applications"
+    ],
     liveUrl: "https://investiq-omega.vercel.app/",
     githubUrl: "https://github.com/adityakumarsingh01/InvestIQ.git",
-    screenshots: [],
+    videoUrl: "",
+    screenshots: ["/assignment/InvestIQ.png"],
     publicStatus: "public",
     customComponent: (
       <div className="my-8 bg-blue-50 dark:bg-blue-900/10 p-6 md:p-8 rounded-2xl border border-blue-100 dark:border-blue-900/30">
@@ -286,7 +355,9 @@ const assessmentsData: Assessment[] = [
         </div>
       </div>
     )
-  },];
+  }
+
+  ];
 
 export default function IndustryAssessments() {
   const [filter, setFilter] = useState("All");
@@ -568,6 +639,17 @@ export default function IndustryAssessments() {
                           : "Public showcase includes only information and assets that are safe to share publicly."}
                       </p>
                     </div>
+                  </div>
+                )}
+
+                {/* Screenshots */}
+                {selectedAssessment.screenshots && selectedAssessment.screenshots.length > 0 && (
+                  <div className="mb-12">
+                    {selectedAssessment.screenshots.map((src, idx) => (
+                      <div key={idx} className="rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-lg">
+                        <img src={src} alt={`${selectedAssessment.title} screenshot ${idx + 1}`} className="w-full h-auto object-cover" />
+                      </div>
+                    ))}
                   </div>
                 )}
 
