@@ -32,14 +32,14 @@ export default async function AdminDashboard() {
       dark: "dark:bg-amber-500/10 dark:border-amber-500/20",
       iconColor: "text-amber-500 dark:text-amber-400",
     },
-    {
-      label: "Education",
-      value: educationCount,
-      icon: GraduationCap,
-      light: "bg-emerald-50 border-emerald-200",
-      dark: "dark:bg-emerald-500/10 dark:border-emerald-500/20",
-      iconColor: "text-emerald-500 dark:text-emerald-400",
-    },
+    // {
+    //   label: "Education",
+    //   value: educationCount,
+    //   icon: GraduationCap,
+    //   light: "bg-emerald-50 border-emerald-200",
+    //   dark: "dark:bg-emerald-500/10 dark:border-emerald-500/20",
+    //   iconColor: "text-emerald-500 dark:text-emerald-400",
+    // },
     {
       label: "Total Entries",
       value: projectCount + assessmentCount + certificateCount + educationCount,
