@@ -45,9 +45,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <Link href="/" className="hidden sm:flex bg-gray-900 dark:bg-white text-white dark:text-black px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-[13px] font-bold tracking-widest hover:scale-105 transition-transform items-center justify-center whitespace-nowrap" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+          <Link href="/" className="hidden sm:flex bg-gray-100 dark:bg-white/5 text-gray-900 dark:text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-[13px] font-bold tracking-widest hover:bg-gray-200 dark:hover:bg-white/10 transition-colors items-center justify-center whitespace-nowrap" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
             View Portfolio
           </Link>
+          <button 
+            onClick={async () => {
+              const { logoutAction } = await import("@/app/login/actions");
+              await logoutAction();
+            }}
+            className="hidden sm:flex bg-red-600 hover:bg-red-700 text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-[13px] font-bold tracking-widest transition-colors items-center justify-center whitespace-nowrap shadow-lg shadow-red-600/20" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}
+          >
+            Logout
+          </button>
           
           {/* Mobile Menu Toggle */}
           <button 
