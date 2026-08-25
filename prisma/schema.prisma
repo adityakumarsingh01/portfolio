@@ -1,0 +1,101 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Project {
+  id                  String   @id @default(uuid())
+  title               String
+  date                String?
+  description         String
+  detailedDescription String?
+  imageUrl            String?
+  technologies        String
+  liveUrl             String?
+  githubUrl           String?
+  linkedinUrl         String?
+  createdAt           String   @default("")
+  updatedAt           String   @default("")
+}
+
+model Assessment {
+  id              String   @id @default(uuid())
+  slug            String   @unique
+  company         String
+  title           String
+  type            String
+  category        String
+  date            String?
+  duration        String?
+  description     String
+  overview        String?
+  objective       String?
+  scope           String?
+  myRole          String?
+  implementation  String?
+  technologies    String?
+  tools           String?
+  skills          String?
+  challenges      String?
+  solution        String?
+  outcome         String?
+  learnings       String?
+  liveUrl         String?
+  githubUrl       String?
+  videoUrl        String?
+  screenshots     String?
+  publicStatus    String   @default("public")
+  createdAt       String   @default("")
+  updatedAt       String   @default("")
+}
+
+model Certificate {
+  id              String   @id @default(uuid())
+  title           String
+  issuer          String
+  issueDate       String?
+  expiryDate      String?
+  credentialId    String?
+  credentialUrl   String?
+  imageUrl        String?
+  category        String?
+  skills          String?  // JSON string
+  description     String?
+  createdAt       String   @default("")
+  updatedAt       String   @default("")
+}
+
+model Education {
+  id          String   @id @default(uuid())
+  title       String
+  institution String
+  date        String
+  icon        String
+  createdAt   String   @default("")
+  updatedAt   String   @default("")
+}
+
+model ExtraCurricular {
+  id              String   @id @default(uuid())
+  title           String
+  issuer          String
+  date            String?
+  description     String?
+  imageUrl        String?
+  credentialUrl   String?
+  createdAt       String   @default("")
+  updatedAt       String   @default("")
+}
+
+model Resume {
+  id        String   @id @default(uuid())
+  pdfUrl    String
+  imageUrl  String
+  updatedAt String   @default("")
+}

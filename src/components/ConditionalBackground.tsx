@@ -1,0 +1,21 @@
+"use client";
+import { usePathname } from "next/navigation";
+
+export default function ConditionalBackground() {
+  const pathname = usePathname();
+  // Don't render the portfolio background blobs on admin routes
+  if (pathname.startsWith("/admin")) return null;
+
+  return (
+    <div className="fixed inset-0 z-0 pointer-events-none transition-colors duration-500">
+      {/* Dark Mode Background */}
+      <div className="absolute top-0 -left-1/4 w-[150vw] h-[100vh] bg-gradient-to-br from-[#0a0026] via-[#030014] to-[#010b24] animate-gradient -z-10 hidden dark:block" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-900/20 rounded-full blur-[150px] mix-blend-screen animate-pulse hidden dark:block" />
+      <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-purple-900/20 rounded-full blur-[120px] mix-blend-screen hidden dark:block" />
+
+      {/* Light Mode Background */}
+      <div className="absolute top-0 left-0 w-full h-[100vh] bg-white -z-10 dark:hidden block" />
+      <div className="absolute top-0 w-full h-[100vh] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay dark:hidden block" />
+    </div>
+  );
+}

@@ -35,7 +35,7 @@ interface Assessment {
   customComponent?: React.ReactNode;
 }
 
-const assessmentsData: Assessment[] = [
+export const assessmentsData: Assessment[] = [
   {
     id: "fundsroom",
     company: "FundsRoom",
@@ -226,7 +226,7 @@ const assessmentsData: Assessment[] = [
   {
     id: "insideiim-investiq",
     company: "InsideIIM",
-    title: "InvestIQ — AI-Powered Investment Research Platform",
+    title: "InvestIQ - AI-Powered Investment Research Platform",
     type: "Technical / Full-Stack / AI Assessment",
     category: "AI / FinTech / Full Stack",
     date: "Jun 2026",
@@ -357,7 +357,7 @@ const assessmentsData: Assessment[] = [
     )
   }
 
-  ];
+];
 
 export default function IndustryAssessments() {
   const [filter, setFilter] = useState("All");
@@ -502,7 +502,7 @@ export default function IndustryAssessments() {
             )
           })}
         </div>
-        
+
         {/* Comparison / Skill Coverage */}
         <div className="mt-20">
           <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-8 text-center" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
