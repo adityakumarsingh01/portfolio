@@ -1,11 +1,87 @@
 import { prisma } from "@/lib/prisma";
 import { Briefcase, FileText, TrendingUp, Database, GraduationCap } from "lucide-react";
+import DashboardCharts from "@/components/DashboardCharts";
 
 export default async function AdminDashboard() {
   const projectCount = await prisma.project.count();
   const assessmentCount = await prisma.assessment.count();
   const certificateCount = await prisma.certificate.count();
   const educationCount = await prisma.education.count();
+
+  // Fetch assessment distribution by category
+  const assessmentCategories = await prisma.assessment.groupBy({
+    by: ['category'],
+    _count: { id: true }
+  });
+
+  const assessmentData = assessmentCategories.map((cat) => ({
+    name: cat.category || "Uncategorized",
+    count: cat._count.id,
+  }));
+
+  // Fetch certificate distribution by category
+  const certCategories = await prisma.certificate.groupBy({
+    by: ['category'],
+    _count: { id: true }
+  });
+
+  const certData = certCategories.map((cat) => ({
+    name: cat.category || "Uncategorized",
+    count: cat._count.id,
+  }));
+
+  // Fetch live vs offline projects
+  const liveProjectsCount = await prisma.project.count({
+    where: {
+      liveUrl: { not: null },
+      NOT: { liveUrl: "" }
+    }
+  });
+
+  const projectStatusData = [
+    { name: "Live Deployments", value: liveProjectsCount, fill: "#10b981" },
+    { name: "Offline/Local", value: projectCount - liveProjectsCount, fill: "#6b7280" },
+  ];
+
+  // Fetch certificates by issuer
+  const certIssuers = await prisma.certificate.groupBy({
+    by: ['issuer'],
+    _count: { id: true }
+  });
+
+  const certIssuerData = certIssuers.map((iss) => ({
+    name: iss.issuer || "Unknown",
+    value: iss._count.id,
+  }));
+
+  // Fetch Top Technologies from Projects
+  const allProjects = await prisma.project.findMany({
+    select: { technologies: true }
+  });
+
+  const techCount: Record<string, number> = {};
+  allProjects.forEach(proj => {
+    if (proj.technologies) {
+      // Split by comma, trim whitespace
+      const techs = proj.technologies.split(',').map(t => t.trim()).filter(Boolean);
+      techs.forEach(tech => {
+        techCount[tech] = (techCount[tech] || 0) + 1;
+      });
+    }
+  });
+
+  // Convert to array, sort by count descending, take top 7
+  const topTechData = Object.entries(techCount)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 7);
+
+  const distributionData = [
+    { name: "Projects", value: projectCount },
+    { name: "Assessments", value: assessmentCount },
+    { name: "Certificates", value: certificateCount },
+    { name: "Education", value: educationCount },
+  ].filter(d => d.value > 0);
 
   const stats = [
     {
@@ -32,14 +108,6 @@ export default async function AdminDashboard() {
       dark: "dark:bg-amber-500/10 dark:border-amber-500/20",
       iconColor: "text-amber-500 dark:text-amber-400",
     },
-    // {
-    //   label: "Education",
-    //   value: educationCount,
-    //   icon: GraduationCap,
-    //   light: "bg-emerald-50 border-emerald-200",
-    //   dark: "dark:bg-emerald-500/10 dark:border-emerald-500/20",
-    //   iconColor: "text-emerald-500 dark:text-emerald-400",
-    // },
     {
       label: "Total Entries",
       value: projectCount + assessmentCount + certificateCount + educationCount,
@@ -75,7 +143,7 @@ export default async function AdminDashboard() {
       </div>
 
       {/* Quick Actions */}
-      <div>
+      <div className="mb-10">
         <h2 className="text-xs font-bold text-gray-400 dark:text-white/30 uppercase tracking-widest mb-4">Quick Actions</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <a
@@ -115,6 +183,19 @@ export default async function AdminDashboard() {
             </div>
           </a>
         </div>
+      </div>
+
+      {/* Analytics Charts */}
+      <div>
+        <h2 className="text-xs font-bold text-gray-400 dark:text-white/30 uppercase tracking-widest mb-4">Analytics Overview</h2>
+        <DashboardCharts 
+          distributionData={distributionData} 
+          assessmentData={assessmentData} 
+          certData={certData}
+          projectStatusData={projectStatusData}
+          topTechData={topTechData}
+          certIssuerData={certIssuerData}
+        />
       </div>
     </div>
   );
