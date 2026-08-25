@@ -77,7 +77,7 @@ export default async function AdminDashboard() {
       {/* Quick Actions */}
       <div>
         <h2 className="text-xs font-bold text-gray-400 dark:text-white/30 uppercase tracking-widest mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <a
             href="/admin/projects/new"
             className="flex items-center gap-4 p-5 bg-white dark:bg-white/5 hover:bg-blue-50 dark:hover:bg-white/8 border border-gray-200 dark:border-white/5 hover:border-blue-200 dark:hover:border-white/10 rounded-2xl transition-all"
@@ -100,6 +100,18 @@ export default async function AdminDashboard() {
             <div>
               <p className="text-sm font-bold text-gray-900 dark:text-white">Add Assessment</p>
               <p className="text-xs text-gray-400 dark:text-white/30">Add an industry assessment entry</p>
+            </div>
+          </a>
+          <a
+            href="/admin/certificates/new"
+            className="flex items-center gap-4 p-5 bg-white dark:bg-white/5 hover:bg-amber-50 dark:hover:bg-white/8 border border-gray-200 dark:border-white/5 hover:border-amber-200 dark:hover:border-white/10 rounded-2xl transition-all"
+          >
+            <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-500/20 flex items-center justify-center">
+              <TrendingUp className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-gray-900 dark:text-white">Add Certificate</p>
+              <p className="text-xs text-gray-400 dark:text-white/30">Add a new certificate or award</p>
             </div>
           </a>
         </div>
