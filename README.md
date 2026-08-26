@@ -5,7 +5,7 @@
   ### 📊 Data Scientist | 🧠 Machine Learning Enthusiast | 💻 Full-Stack Developer
   
   <p align="center">
-    <a href="https://linkedin.com/in/aditya-kumar-singh"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+    <a href="https://www.linkedin.com/in/aditya-kumar-singh-990377291/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
     <a href="mailto:adityasingh81201@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
     <a href="https://portfolio-ecru-one-nzr8n36bhi.vercel.app"><img src="https://img.shields.io/badge/Portfolio-2563EB?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
   </p>
@@ -71,7 +71,7 @@ I thrive at the intersection of data and product, turning complex datasets into 
 
 If you're a recruiter looking for a versatile engineer who can navigate both Data and Full-Stack environments, let's chat!
 
-- 📧 Email me at: **adityasingh81201@gmail.com**
+- 📧 Email me at: **[EMAIL_ADDRESS](adityasingh81201@gmail.com)**
 - 💼 Connect with me on **[LinkedIn](https://linkedin.com/in/aditya-kumar-singh)**
 
 <br/>
