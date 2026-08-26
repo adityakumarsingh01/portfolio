@@ -1,61 +1,80 @@
-# Aditya Kumar Singh - Data Science & Engineering Portfolio
+<div align="center">
+  
+  # 🚀 Hi there, I'm Aditya Kumar Singh!
+  
+  ### 📊 Data Scientist | 🧠 Machine Learning Enthusiast | 💻 Full-Stack Developer
+  
+  <p align="center">
+    <a href="https://linkedin.com/in/aditya-kumar-singh"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+    <a href="mailto:adityasingh81201@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+    <a href="https://portfolio-ecru-one-nzr8n36bhi.vercel.app"><img src="https://img.shields.io/badge/Portfolio-2563EB?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
+  </p>
+  
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=3B82F6&center=true&vCenter=true&width=435&lines=Bridging+Data+and+Engineering;Building+Scalable+ML+Pipelines;Crafting+Modern+Web+Experiences;Always+Learning+%26+Building" alt="Typing SVG" />
+</div>
 
-Welcome to the source code for my professional portfolio! This repository contains a modern, fully responsive web application built to showcase my background in Data Science, Machine Learning, and Data Engineering. 
+---
 
-## 🌟 Features
+## 👨‍💻 About Me
 
-- **Modern Glassmorphism UI**: Built with dynamic gradient meshes and frosted glass components for a premium "Data Science Dashboard" aesthetic.
-- **Light / Dark Mode**: Full system-aware theming support using Next.js `next-themes` and Tailwind CSS custom variables.
-- **Collapsible Interactive Sidebar**: Smooth navigation with a responsive sidebar that adapts to hover states.
-- **High-Performance**: Statically generated pages optimized using the Next.js App Router.
-- **Responsive Design**: Flawless layout scaling from mobile screens to ultrawide desktop monitors.
+I am a passionate software engineer with a strong background in **Data Science, Machine Learning, and Data Engineering**, coupled with the ability to build production-ready **Full-Stack Web Applications**. 
 
-## 🛠️ Tech Stack
+I thrive at the intersection of data and product, turning complex datasets into actionable insights and building the infrastructure and user interfaces to serve them. Whether I'm training machine learning models, designing SQL databases, or crafting beautiful Next.js dashboards, I am driven by solving hard problems.
 
-- **Framework**: [Next.js (App Router)](https://nextjs.org/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
-- **Theme Management**: `next-themes`
+* 🎓 **Background:** Deeply involved in continuous learning, constantly upgrading my skills through industry assessments and certifications.
+* 💡 **What I do:** I build end-to-end solutions—from data pipelines and AI integration to sleek, responsive front-end user experiences.
+* 🤝 **Looking for:** Open to full-time opportunities, internships, and exciting collaborations where I can contribute to impactful products.
 
-## 🚀 Getting Started
+---
 
-If you want to run this project locally on your machine, follow these steps:
+## 🛠️ Tech Stack & Tools
 
-### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+### Languages
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" />
+</p>
 
-### Installation
+### Data & Machine Learning
+<p align="left">
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
+</p>
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
-   ```
+### Full-Stack Web Development
+<p align="left">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+</p>
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+---
 
-3. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+## 📈 GitHub Stats
 
-4. **View the application**
-   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=adityakumarsingh01&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Aditya's GitHub Stats" />
+  <br/><br/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=adityakumarsingh01&theme=tokyonight&hide_border=true&background=0D1117" alt="Aditya's GitHub Streak" />
+</div>
 
-## 📂 Project Structure
+---
 
-- `/src/app`: Contains all the Next.js routes (`/about`, `/projects`, `/training`, `/certificates`, `/resume`, `/contact`).
-- `/src/components`: Reusable UI components (Sidebar, ThemeToggle, ThemeProvider, etc.).
-- `/public`: Static assets like images and PDFs.
+## 🌐 Let's Connect
 
-## 📬 Contact Me
+If you're a recruiter looking for a versatile engineer who can navigate both Data and Full-Stack environments, let's chat!
 
-I am currently open to full-time opportunities, internships, and exciting freelance projects.
-- **Email**: adityasingh81201@gmail.com
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- **GitHub**: [Aditya Singh](https://github.com/your-username)
+- 📧 Email me at: **adityasingh81201@gmail.com**
+- 💼 Connect with me on **[LinkedIn](https://linkedin.com/in/aditya-kumar-singh)**
+
+<br/>
+<div align="center">
+  <i>"Data is the new oil, but code is the engine."</i>
+</div>
