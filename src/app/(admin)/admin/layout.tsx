@@ -95,6 +95,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               >
                 View Portfolio
               </Link>
+              <button 
+                onClick={async () => {
+                  const { logoutAction } = await import("@/app/login/actions");
+                  await logoutAction();
+                }}
+                className="mt-2 bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-lg tracking-widest transition-colors shadow-lg shadow-red-600/20"
+              >
+                Logout
+              </button>
             </div>
           </motion.div>
         )}
