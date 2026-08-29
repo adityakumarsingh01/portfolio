@@ -7,22 +7,33 @@ export default function NewProject() {
   async function createProject(formData: FormData) {
     "use server";
     
-    await prisma.project.create({
-      data: {
-        title: formData.get("title") as string,
-        date: formData.get("date") as string,
-        description: formData.get("description") as string,
-        detailedDescription: formData.get("detailedDescription") as string,
-        imageUrl: formData.get("imageUrl") as string,
-        technologies: formData.get("technologies") as string,
-        liveUrl: formData.get("liveUrl") as string,
-        githubUrl: formData.get("githubUrl") as string,
-        linkedinUrl: formData.get("linkedinUrl") as string,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      },
-    });
+    try {
+      await prisma.project.create({
+        data: {
+          title: formData.get("title") as string,
+          date: formData.get("date") as string,
+          description: formData.get("description") as string,
+          detailedDescription: formData.get("detailedDescription") as string,
+          imageUrl: formData.get("imageUrl") as string,
+          technologies: formData.get("technologies") as string,
+          liveUrl: formData.get("liveUrl") as string,
+          githubUrl: formData.get("githubUrl") as string,
+          linkedinUrl: formData.get("linkedinUrl") as string,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+        },
+      });
+    } catch (error) {
+      console.error("Failed to create project:", error);
+      throw new Error("Failed to create project");
+    }
 
+    const { revalidatePath } = await import("next/cache");
+    revalidatePath("/admin");
+    revalidatePath("/admin/projects");
+    revalidatePath("/projects");
+    revalidatePath("/");
+    
     redirect("/admin/projects");
   }
 
