@@ -71,7 +71,7 @@ I thrive at the intersection of data and product, turning complex datasets into 
 
 If you're a recruiter looking for a versatile engineer who can navigate both Data and Full-Stack environments, let's chat!
 
-- 📧 Email me at: **[EMAIL_ADDRESS](mailto:oadityasingh81201@gmail.com)**
+- 📧 Email me at: **[EMAIL_ADDRESS](mailto:adityasingh81201@gmail.com)**
 - 💼 Connect with me on **[LinkedIn](https://www.linkedin.com/in/aditya-kumar-singh-990377291/)**
 
 <br/>
