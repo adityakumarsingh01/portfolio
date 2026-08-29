@@ -22,7 +22,7 @@ I am a passionate software engineer with a strong background in **Data Science, 
 I thrive at the intersection of data and product, turning complex datasets into actionable insights and building the infrastructure and user interfaces to serve them. Whether I'm training machine learning models, designing SQL databases, or crafting beautiful Next.js dashboards, I am driven by solving hard problems.
 
 * 🎓 **Background:** Deeply involved in continuous learning, constantly upgrading my skills through industry assessments and certifications.
-* 💡 **What I do:** I build end-to-end solutions—from data pipelines and AI integration to sleek, responsive front-end user experiences.
+* 💡 **What I do:** I build end-to-end solutions-from data pipelines and AI integration to sleek, responsive front-end user experiences.
 * 🤝 **Looking for:** Open to full-time opportunities, internships, and exciting collaborations where I can contribute to impactful products.
 
 ---
