@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ['192.168.56.1'],
   serverExternalPackages: ['better-sqlite3', '@prisma/adapter-better-sqlite3'],
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
