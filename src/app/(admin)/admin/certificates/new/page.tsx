@@ -2,23 +2,43 @@ import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save } from "lucide-react";
+import { put } from "@vercel/blob";
 
 export default function NewCertificate() {
   async function createCertificate(formData: FormData) {
     "use server";
     
-    await prisma.certificate.create({
-      data: {
-        title: formData.get("title") as string,
-        issuer: formData.get("issuer") as string,
-        category: formData.get("category") as string,
-        issueDate: formData.get("issueDate") as string,
-        credentialUrl: formData.get("credentialUrl") as string,
-        imageUrl: formData.get("imageUrl") as string,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      },
-    });
+    try {
+      let imageUrl = formData.get("imageUrl") as string;
+      const imageFile = formData.get("imageFile") as File | null;
+      
+      if (imageFile && imageFile.size > 0) {
+        const blob = await put(imageFile.name, imageFile, { access: 'public' });
+        imageUrl = blob.url;
+      }
+
+      await prisma.certificate.create({
+        data: {
+          title: formData.get("title") as string,
+          issuer: formData.get("issuer") as string,
+          category: formData.get("category") as string,
+          issueDate: formData.get("issueDate") as string,
+          credentialUrl: formData.get("credentialUrl") as string,
+          imageUrl: imageUrl,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+        },
+      });
+    } catch (error) {
+      console.error("Failed to create certificate:", error);
+      throw new Error("Failed to create certificate");
+    }
+
+    const { revalidatePath } = await import("next/cache");
+    revalidatePath("/admin");
+    revalidatePath("/admin/certificates");
+    revalidatePath("/certificates");
+    revalidatePath("/");
 
     redirect("/admin/certificates");
   }
@@ -62,8 +82,11 @@ export default function NewCertificate() {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Background Image URL</label>
-            <input type="text" name="imageUrl" placeholder="e.g. /certificates/SEO.png" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-gray-900 dark:text-white" />
+            <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Background Image (Upload or paste URL)</label>
+            <div className="space-y-2">
+              <input type="file" name="imageFile" accept="image/*" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100" />
+              <input type="text" name="imageUrl" placeholder="OR paste an external image URL here" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-gray-900 dark:text-white text-sm" />
+            </div>
           </div>
         </div>
 

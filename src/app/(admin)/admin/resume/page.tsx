@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
-import { Save, FileText } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, Save, FileText } from "lucide-react";
+import { put } from "@vercel/blob";
 
 export default async function AdminResume() {
   const resume = await prisma.resume.findFirst();
@@ -9,11 +11,26 @@ export default async function AdminResume() {
     "use server";
     
     const id = formData.get("id") as string;
-    const data = {
-      pdfUrl: formData.get("pdfUrl") as string,
-      imageUrl: formData.get("imageUrl") as string,
-      updatedAt: new Date().toISOString(),
-    };
+    try {
+      let pdfUrl = formData.get("pdfUrl") as string;
+      const pdfFile = formData.get("pdfFile") as File | null;
+      if (pdfFile && pdfFile.size > 0) {
+        const blob = await put(pdfFile.name, pdfFile, { access: 'public' });
+        pdfUrl = blob.url;
+      }
+
+      let imageUrl = formData.get("imageUrl") as string;
+      const imageFile = formData.get("imageFile") as File | null;
+      if (imageFile && imageFile.size > 0) {
+        const blob = await put(imageFile.name, imageFile, { access: 'public' });
+        imageUrl = blob.url;
+      }
+
+      const data = {
+        pdfUrl,
+        imageUrl,
+        updatedAt: new Date().toISOString(),
+      };
 
     if (id) {
       await prisma.resume.update({
@@ -26,8 +43,14 @@ export default async function AdminResume() {
       });
     }
 
+    } catch (error) {
+      console.error("Failed to update resume:", error);
+      throw new Error("Failed to update resume");
+    }
+
     revalidatePath("/admin/resume");
     revalidatePath("/resume");
+    revalidatePath("/");
   }
 
   return (
@@ -55,27 +78,31 @@ export default async function AdminResume() {
           
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">PDF Document URL</label>
-              <input 
-                type="text" 
-                name="pdfUrl" 
-                defaultValue={resume?.pdfUrl || ""} 
-                required 
-                placeholder="e.g., /resume/Aditya Kumar Singh.pdf"
-                className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white" 
-              />
+              <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">PDF Document (Upload or paste URL)</label>
+              <div className="space-y-2">
+                <input type="file" name="pdfFile" accept="application/pdf" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                <input 
+                  type="text" 
+                  name="pdfUrl" 
+                  defaultValue={resume?.pdfUrl || ""} 
+                  placeholder="OR paste an external PDF URL here"
+                  className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white text-sm" 
+                />
+              </div>
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Preview Image URL</label>
-              <input 
-                type="text" 
-                name="imageUrl" 
-                defaultValue={resume?.imageUrl || ""} 
-                required 
-                placeholder="e.g., /resume/Aditya Kumar Singh_Resume.jpg"
-                className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white" 
-              />
+              <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Preview Image (Upload or paste URL)</label>
+              <div className="space-y-2">
+                <input type="file" name="imageFile" accept="image/*" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                <input 
+                  type="text" 
+                  name="imageUrl" 
+                  defaultValue={resume?.imageUrl || ""} 
+                  placeholder="OR paste an external image URL here"
+                  className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white text-sm" 
+                />
+              </div>
             </div>
           </div>
 

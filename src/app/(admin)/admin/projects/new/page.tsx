@@ -2,19 +2,28 @@ import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save } from "lucide-react";
+import { put } from "@vercel/blob";
 
 export default function NewProject() {
   async function createProject(formData: FormData) {
     "use server";
     
     try {
+      let imageUrl = formData.get("imageUrl") as string;
+      const imageFile = formData.get("imageFile") as File | null;
+      
+      if (imageFile && imageFile.size > 0) {
+        const blob = await put(imageFile.name, imageFile, { access: 'public' });
+        imageUrl = blob.url;
+      }
+
       await prisma.project.create({
         data: {
           title: formData.get("title") as string,
           date: formData.get("date") as string,
           description: formData.get("description") as string,
           detailedDescription: formData.get("detailedDescription") as string,
-          imageUrl: formData.get("imageUrl") as string,
+          imageUrl: imageUrl,
           technologies: formData.get("technologies") as string,
           liveUrl: formData.get("liveUrl") as string,
           githubUrl: formData.get("githubUrl") as string,
@@ -75,8 +84,11 @@ export default function NewProject() {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Image URL</label>
-            <input type="text" name="imageUrl" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white" />
+            <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Image (Upload or paste URL)</label>
+            <div className="space-y-2">
+              <input type="file" name="imageFile" accept="image/*" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+              <input type="text" name="imageUrl" placeholder="OR paste an external image URL here" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white text-sm" />
+            </div>
           </div>
 
           <div className="grid grid-cols-3 gap-4">
