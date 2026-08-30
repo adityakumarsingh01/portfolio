@@ -14,21 +14,32 @@ export default async function EditProject(props: { params: Promise<{ id: string 
   async function updateProject(formData: FormData) {
     "use server";
     
-    await prisma.project.update({
-      where: { id: params.id },
-      data: {
-        title: formData.get("title") as string,
-        date: formData.get("date") as string,
-        description: formData.get("description") as string,
-        detailedDescription: formData.get("detailedDescription") as string,
-        imageUrl: formData.get("imageUrl") as string,
-        technologies: formData.get("technologies") as string,
-        liveUrl: formData.get("liveUrl") as string,
-        githubUrl: formData.get("githubUrl") as string,
-        linkedinUrl: formData.get("linkedinUrl") as string,
-        updatedAt: new Date().toISOString(),
-      },
-    });
+    try {
+      await prisma.project.update({
+        where: { id: params.id },
+        data: {
+          title: formData.get("title") as string,
+          date: formData.get("date") as string,
+          description: formData.get("description") as string,
+          detailedDescription: formData.get("detailedDescription") as string,
+          imageUrl: formData.get("imageUrl") as string,
+          technologies: formData.get("technologies") as string,
+          liveUrl: formData.get("liveUrl") as string,
+          githubUrl: formData.get("githubUrl") as string,
+          linkedinUrl: formData.get("linkedinUrl") as string,
+          updatedAt: new Date().toISOString(),
+        },
+      });
+    } catch (error) {
+      console.error("Failed to update project:", error);
+      throw new Error("Failed to update project");
+    }
+
+    const { revalidatePath } = await import("next/cache");
+    revalidatePath("/admin");
+    revalidatePath("/admin/projects");
+    revalidatePath("/projects");
+    revalidatePath("/");
 
     redirect("/admin/projects");
   }
