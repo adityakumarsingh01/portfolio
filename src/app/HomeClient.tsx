@@ -86,7 +86,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
               className="mt-8 flex justify-center md:justify-start w-full"
             >
               <p className="text-[10px] md:text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] leading-loose max-w-lg text-center md:text-left">
-                ASPIRING AI ENGINEER / MACHINE LEARNING / DATA SCIENCE / FULL-STACK DEVELOPMENT
+                AI ENGINEER / MACHINE LEARNING / DATA SCIENCE / FULL-STACK DEVELOPMENT
               </p>
             </motion.div>
           </motion.div>
