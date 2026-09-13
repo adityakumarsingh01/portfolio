@@ -95,7 +95,6 @@ export default function NewCertificate() {
           <Save className="w-5 h-5" /> Save Certificate
         </button>
         </FormWrapper>
-      </div>
     </div>
   );
 }

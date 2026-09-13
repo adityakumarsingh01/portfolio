@@ -102,7 +102,6 @@ export default async function EditCertificate(props: { params: Promise<{ id: str
           <Save className="w-5 h-5" /> Update Certificate
         </button>
         </FormWrapper>
-      </div>
     </div>
   );
 }

@@ -119,7 +119,6 @@ export default async function EditProject(props: { params: Promise<{ id: string 
           <Save className="w-5 h-5" /> Update Project
         </button>
         </FormWrapper>
-      </div>
     </div>
   );
 }
