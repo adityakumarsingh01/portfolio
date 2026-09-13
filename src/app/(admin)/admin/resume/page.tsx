@@ -3,6 +3,7 @@ import { revalidatePath } from "next/cache";
 import Link from "next/link";
 import { ArrowLeft, Save, FileText } from "lucide-react";
 import { put } from "@vercel/blob";
+import { FormWrapper } from "@/components/FormWrapper";
 
 export default async function AdminResume() {
   const resume = await prisma.resume.findFirst();
@@ -73,7 +74,7 @@ export default async function AdminResume() {
           </div>
         </div>
 
-        <form action={updateResume} className="space-y-6">
+        <FormWrapper action={updateResume} className="space-y-6">
           <input type="hidden" name="id" value={resume?.id || ""} />
           
           <div className="space-y-4">
@@ -109,7 +110,7 @@ export default async function AdminResume() {
           <button type="submit" className="flex items-center justify-center gap-2 w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-colors mt-8">
             <Save className="w-5 h-5" /> Save Changes
           </button>
-        </form>
+        </FormWrapper>
       </div>
     </div>
   );

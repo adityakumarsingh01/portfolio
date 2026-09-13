@@ -3,6 +3,7 @@ import { redirect, notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save } from "lucide-react";
 import { put } from "@vercel/blob";
+import { FormWrapper } from "@/components/FormWrapper";
 
 export default async function EditCertificate(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
@@ -59,7 +60,7 @@ export default async function EditCertificate(props: { params: Promise<{ id: str
         <h1 className="text-3xl font-black text-gray-900 dark:text-white">Edit Certificate</h1>
       </div>
 
-      <form action={updateCertificate} className="space-y-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5 p-8 rounded-2xl">
+        <FormWrapper action={updateCertificate} className="space-y-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5 p-8 rounded-2xl">
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Title</label>
@@ -100,7 +101,8 @@ export default async function EditCertificate(props: { params: Promise<{ id: str
         <button type="submit" className="flex items-center justify-center gap-2 w-full py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-xl transition-colors">
           <Save className="w-5 h-5" /> Update Certificate
         </button>
-      </form>
+        </FormWrapper>
+      </div>
     </div>
   );
 }

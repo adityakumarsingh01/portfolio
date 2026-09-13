@@ -3,6 +3,7 @@ import { redirect, notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save } from "lucide-react";
 import { put } from "@vercel/blob";
+import { FormWrapper } from "@/components/FormWrapper";
 
 export default async function EditProject(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
@@ -62,7 +63,7 @@ export default async function EditProject(props: { params: Promise<{ id: string 
         <h1 className="text-3xl font-black text-gray-900 dark:text-white">Edit Project</h1>
       </div>
 
-      <form action={updateProject} className="space-y-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5 p-8 rounded-2xl">
+        <FormWrapper action={updateProject} className="space-y-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5 p-8 rounded-2xl">
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
@@ -117,7 +118,8 @@ export default async function EditProject(props: { params: Promise<{ id: string 
         <button type="submit" className="flex items-center justify-center gap-2 w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-colors">
           <Save className="w-5 h-5" /> Update Project
         </button>
-      </form>
+        </FormWrapper>
+      </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save } from "lucide-react";
 import { put } from "@vercel/blob";
+import { FormWrapper } from "@/components/FormWrapper";
 
 export default function NewCertificate() {
   async function createCertificate(formData: FormData) {
@@ -52,7 +53,7 @@ export default function NewCertificate() {
         <h1 className="text-3xl font-black text-gray-900 dark:text-white">Add Certificate</h1>
       </div>
 
-      <form action={createCertificate} className="space-y-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5 p-8 rounded-2xl">
+        <FormWrapper action={createCertificate} className="space-y-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5 p-8 rounded-2xl">
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Title</label>
@@ -93,7 +94,8 @@ export default function NewCertificate() {
         <button type="submit" className="flex items-center justify-center gap-2 w-full py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-xl transition-colors">
           <Save className="w-5 h-5" /> Save Certificate
         </button>
-      </form>
+        </FormWrapper>
+      </div>
     </div>
   );
 }
