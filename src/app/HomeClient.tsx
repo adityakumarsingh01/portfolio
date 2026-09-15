@@ -328,7 +328,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
 
             <motion.div
               layoutId={selectedId}
-              className="bg-gray-50 dark:bg-[#0a0026] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col md:flex-row relative border border-white/10"
+              className="bg-gray-50 dark:bg-[#0a0026] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col md:flex-row relative border border-white/10"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -358,7 +358,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
               </div>
 
               {/* Right Side: Details */}
-              <div className="w-full md:w-3/5 p-6 md:p-12 flex flex-col">
+              <div className="w-full md:w-3/5 p-6 md:p-12 flex flex-col flex-1 overflow-y-auto min-h-0">
                 <div className="flex justify-start mb-4">
                   <span className="text-sm font-mono text-gray-500 dark:text-gray-400 uppercase tracking-widest">
                     {selectedProject.date}
