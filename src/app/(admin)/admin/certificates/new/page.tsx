@@ -24,6 +24,7 @@ export default function NewCertificate() {
           issuer: formData.get("issuer") as string,
           category: formData.get("category") as string,
           issueDate: formData.get("issueDate") as string,
+          credentialId: (formData.get("credentialId") as string) || null,
           credentialUrl: formData.get("credentialUrl") as string,
           imageUrl: imageUrl,
           createdAt: new Date().toISOString(),
@@ -77,9 +78,14 @@ export default function NewCertificate() {
               <input type="text" name="issueDate" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-gray-900 dark:text-white" placeholder="e.g., Nov' 23" />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Credential URL</label>
-              <input type="url" name="credentialUrl" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-gray-900 dark:text-white" />
+              <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Certificate Number / Credential ID</label>
+              <input type="text" name="credentialId" placeholder="e.g. UC-7b2a9e88 or Cert #12345" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-gray-900 dark:text-white" />
             </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Credential URL (Verification Link)</label>
+            <input type="url" name="credentialUrl" placeholder="https://..." className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-gray-900 dark:text-white" />
           </div>
 
           <div>

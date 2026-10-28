@@ -60,7 +60,14 @@ export default async function AdminCertificates() {
                       <div className="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 flex items-center justify-center flex-shrink-0">
                         <Award className="w-4 h-4 text-amber-500 dark:text-amber-400" />
                       </div>
-                      <p className="font-bold text-gray-900 dark:text-white text-sm">{cert.title}</p>
+                      <div>
+                        <p className="font-bold text-gray-900 dark:text-white text-sm">{cert.title}</p>
+                        {cert.credentialId && (
+                          <span className="inline-block mt-0.5 font-mono text-[10px] font-semibold text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-500/20">
+                            ID: {cert.credentialId}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </td>
                   <td className="px-6 py-4">
@@ -150,7 +157,14 @@ export default async function AdminCertificates() {
                       <div className="w-8 h-8 rounded-lg bg-yellow-50 dark:bg-yellow-500/10 border border-yellow-200 dark:border-yellow-500/20 flex items-center justify-center flex-shrink-0">
                         <Award className="w-4 h-4 text-yellow-500 dark:text-yellow-400" />
                       </div>
-                      <p className="font-bold text-gray-900 dark:text-white text-sm">{act.title}</p>
+                      <div>
+                        <p className="font-bold text-gray-900 dark:text-white text-sm">{act.title}</p>
+                        {act.credentialId && (
+                          <span className="inline-block mt-0.5 font-mono text-[10px] font-semibold text-yellow-700 dark:text-yellow-300 bg-yellow-50 dark:bg-yellow-500/10 px-1.5 py-0.5 rounded border border-yellow-200 dark:border-yellow-500/20">
+                            ID: {act.credentialId}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </td>
                   <td className="px-6 py-4">

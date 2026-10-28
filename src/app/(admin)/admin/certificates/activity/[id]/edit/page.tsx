@@ -16,18 +16,32 @@ export default async function EditActivity(props: { params: Promise<{ id: string
   async function updateActivity(formData: FormData) {
     "use server";
     
-    await prisma.extraCurricular.update({
-      where: { id: params.id },
-      data: {
-        title: formData.get("title") as string,
-        issuer: formData.get("issuer") as string,
-        date: formData.get("date") as string,
-        description: formData.get("description") as string,
-        credentialUrl: formData.get("credentialUrl") as string,
-        imageUrl: formData.get("imageUrl") as string,
-        updatedAt: new Date().toISOString(),
-      },
-    });
+    try {
+      await prisma.extraCurricular.update({
+        where: { id: params.id },
+        data: {
+          title: formData.get("title") as string,
+          issuer: formData.get("issuer") as string,
+          date: formData.get("date") as string,
+          description: formData.get("description") as string,
+          credentialId: (formData.get("credentialId") as string) || null,
+          credentialUrl: formData.get("credentialUrl") as string,
+          imageUrl: formData.get("imageUrl") as string,
+          updatedAt: new Date().toISOString(),
+        },
+      });
+    } catch (error) {
+      console.error("Failed to update activity:", error);
+      throw new Error("Failed to update activity");
+    }
+
+    try {
+      const { revalidatePath } = await import("next/cache");
+      revalidatePath("/admin");
+      revalidatePath("/admin/certificates");
+      revalidatePath("/certificates");
+      revalidatePath("/");
+    } catch {}
 
     redirect("/admin/certificates");
   }
@@ -59,20 +73,25 @@ export default async function EditActivity(props: { params: Promise<{ id: string
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Description</label>
-            <textarea name="description" rows={3} defaultValue={activity.description || ""} required className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900 dark:text-white"></textarea>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Certificate Number / Credential ID</label>
+              <input type="text" name="credentialId" defaultValue={activity.credentialId || ""} placeholder="e.g. PARTICIPANT-2024-998" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900 dark:text-white" />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Credential URL (Verification Link)</label>
+              <input type="url" name="credentialUrl" defaultValue={activity.credentialUrl || ""} placeholder="https://..." className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900 dark:text-white" />
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Credential URL</label>
-              <input type="url" name="credentialUrl" defaultValue={activity.credentialUrl || ""} className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900 dark:text-white" />
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Background Image URL</label>
-              <input type="text" name="imageUrl" defaultValue={activity.imageUrl || ""} placeholder="e.g. /certificates/Hack Quest.jpg" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900 dark:text-white" />
-            </div>
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Description</label>
+            <textarea name="description" rows={3} defaultValue={activity.description || ""} required className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900 dark:text-white text-justify"></textarea>
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 dark:text-white/70 mb-1">Background Image URL</label>
+            <input type="text" name="imageUrl" defaultValue={activity.imageUrl || ""} placeholder="e.g. /certificates/Hack Quest.jpg" className="w-full px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900 dark:text-white" />
           </div>
         </div>
 

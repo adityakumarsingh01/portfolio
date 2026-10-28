@@ -61,10 +61,25 @@ export default function CertificatesClient({ certificates, activities }: { certi
                     )}
                   </div>
                   <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>{cert.title}</h4>
-                  <p className="text-[10px] font-mono text-gray-500 dark:text-gray-400 uppercase tracking-widest mt-auto flex items-center gap-2">
-                    {cert.issuer}
-                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                  </p>
+                  
+                  {cert.credentialId && (
+                    <div className="my-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-100/90 dark:bg-purple-900/40 border border-purple-300/80 dark:border-purple-500/40 text-purple-900 dark:text-purple-200 text-xs font-bold tracking-wide shadow-sm w-fit backdrop-blur-sm">
+                      <span className="text-[10px] uppercase font-black tracking-wider text-purple-600 dark:text-purple-400">ID:</span>
+                      <span className="font-mono font-bold tracking-wider">{cert.credentialId}</span>
+                    </div>
+                  )}
+
+                  <div className="mt-auto pt-3 flex items-center justify-between text-[11px] font-mono text-gray-500 dark:text-gray-400 uppercase tracking-widest">
+                    <span>{cert.issuer}</span>
+                    {cert.credentialUrl ? (
+                      <span className="inline-flex items-center gap-1 text-purple-600 dark:text-purple-400 font-bold group-hover:underline">
+                        Verify
+                        <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                      </span>
+                    ) : (
+                      <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                    )}
+                  </div>
                 </div>
               </SpotlightCard>
             </motion.div>
@@ -104,10 +119,28 @@ export default function CertificatesClient({ certificates, activities }: { certi
                       </span>
                     )}
                   </div>
-                  <h4 className="text-2xl font-bold text-gray-900 dark:text-white drop-shadow-sm tracking-wider mb-6" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>{act.title}</h4>
+                  <h4 className="text-2xl font-bold text-gray-900 dark:text-white drop-shadow-sm tracking-wider mb-3" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>{act.title}</h4>
+                  
+                  {act.credentialId && (
+                    <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-100/90 dark:bg-yellow-900/40 border border-yellow-300/80 dark:border-yellow-500/40 text-yellow-900 dark:text-yellow-200 text-xs font-bold tracking-wide shadow-sm w-fit backdrop-blur-sm">
+                      <span className="text-[10px] uppercase font-black tracking-wider text-yellow-700 dark:text-yellow-400">ID / Cert No:</span>
+                      <span className="font-mono font-bold tracking-wider">{act.credentialId}</span>
+                    </div>
+                  )}
+
                   <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-8 font-medium drop-shadow-sm">{act.description}</p>
-                  <div className="w-10 h-10 shrink-0 rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-black/10 dark:border-white/10 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-white group-hover:border-yellow-500 transition-colors -rotate-45 group-hover:rotate-0 duration-300 shadow-sm mt-auto">
-                    <ArrowRight className="w-4 h-4" />
+                  <div className="flex items-center justify-between mt-auto">
+                    {act.credentialUrl ? (
+                      <span className="text-xs font-mono font-bold text-yellow-600 dark:text-yellow-400 uppercase tracking-wider group-hover:underline flex items-center gap-1">
+                        Verify Certificate
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    ) : (
+                      <span></span>
+                    )}
+                    <div className="w-10 h-10 shrink-0 rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-black/10 dark:border-white/10 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-white group-hover:border-yellow-500 transition-colors -rotate-45 group-hover:rotate-0 duration-300 shadow-sm">
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </div>
               </SpotlightCard>
