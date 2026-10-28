@@ -359,18 +359,104 @@ export const assessmentsData: Assessment[] = [
 
 ];
 
-export default function IndustryAssessments() {
+function parseList(val: string | null | undefined): string[] {
+  if (!val) return [];
+  try {
+    if (val.trim().startsWith("[")) {
+      return JSON.parse(val);
+    }
+  } catch {}
+  return val.split(",").map(s => s.trim()).filter(Boolean);
+}
+
+export default function IndustryAssessments({ dbAssessments }: { dbAssessments?: any[] } = {}) {
   const [filter, setFilter] = useState("All");
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
+  const effectiveAssessments = React.useMemo(() => {
+    if (!dbAssessments || dbAssessments.length === 0) {
+      return assessmentsData;
+    }
+
+    const formattedDbAssessments: Assessment[] = dbAssessments.map((db: any) => ({
+      id: db.id,
+      company: db.company || "",
+      title: db.title || "",
+      type: db.type || "Assessment",
+      category: db.category || "Technical",
+      date: db.date || undefined,
+      duration: db.duration || undefined,
+      description: db.description || "",
+      overview: db.overview || undefined,
+      objective: db.objective || undefined,
+      scope: parseList(db.scope),
+      myRole: db.myRole || undefined,
+      implementation: parseList(db.implementation),
+      technologies: parseList(db.technologies),
+      tools: parseList(db.tools),
+      skills: parseList(db.skills),
+      challenges: parseList(db.challenges),
+      solution: parseList(db.solution),
+      outcome: db.outcome || undefined,
+      learnings: parseList(db.learnings),
+      liveUrl: db.liveUrl || "",
+      githubUrl: db.githubUrl || "",
+      videoUrl: db.videoUrl || undefined,
+      screenshots: parseList(db.screenshots),
+      publicStatus: (db.publicStatus as PublicStatus) || "public",
+    }));
+
+    const result: Assessment[] = [];
+    const hardcodedMap = new Map<string, Assessment>();
+    for (const a of assessmentsData) {
+      hardcodedMap.set(a.id.toLowerCase(), a);
+      hardcodedMap.set(`${a.company.toLowerCase()}__${a.title.toLowerCase()}`, a);
+    }
+
+    for (const db of formattedDbAssessments) {
+      const match =
+        hardcodedMap.get(db.id.toLowerCase()) ||
+        hardcodedMap.get(`${db.company.toLowerCase()}__${db.title.toLowerCase()}`);
+
+      if (match) {
+        result.push({
+          ...match,
+          ...db,
+          technologies: db.technologies?.length ? db.technologies : match.technologies,
+          skills: db.skills?.length ? db.skills : match.skills,
+          scope: db.scope?.length ? db.scope : match.scope,
+          implementation: db.implementation?.length ? db.implementation : match.implementation,
+          screenshots: db.screenshots?.length ? db.screenshots : match.screenshots,
+          customComponent: match.customComponent,
+        });
+      } else {
+        result.push(db);
+      }
+    }
+
+    for (const hardcoded of assessmentsData) {
+      const alreadyAdded = result.some(
+        a =>
+          a.id.toLowerCase() === hardcoded.id.toLowerCase() ||
+          `${a.company.toLowerCase()}__${a.title.toLowerCase()}` ===
+            `${hardcoded.company.toLowerCase()}__${hardcoded.title.toLowerCase()}`
+      );
+      if (!alreadyAdded) {
+        result.push(hardcoded);
+      }
+    }
+
+    return result;
+  }, [dbAssessments]);
+
   // Extract active categories from data
-  const availableCategories = ["All", ...Array.from(new Set(assessmentsData.map(a => a.category)))];
+  const availableCategories = ["All", ...Array.from(new Set(effectiveAssessments.map(a => a.category)))];
 
   const filteredAssessments = filter === "All"
-    ? assessmentsData
-    : assessmentsData.filter(a => a.category === filter);
+    ? effectiveAssessments
+    : effectiveAssessments.filter(a => a.category === filter);
 
-  const selectedAssessment = assessmentsData.find(a => a.id === selectedId);
+  const selectedAssessment = effectiveAssessments.find(a => a.id === selectedId);
 
   return (
     <section id="assessments" className="py-24 border-t border-black/5 dark:border-white/5">

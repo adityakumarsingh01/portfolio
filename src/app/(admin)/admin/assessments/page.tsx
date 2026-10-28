@@ -84,15 +84,11 @@ export default async function AdminAssessments() {
                         className="p-2 text-gray-400 dark:text-white/30 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-500/10 rounded-lg transition-all">
                         <Edit className="w-4 h-4" />
                       </Link>
-                      <form action={async (formData: FormData) => {
+                      <form action={async () => {
                         "use server";
-                        const id = formData.get("id") as string;
-                        await prisma.assessment.delete({ where: { id } });
-                        const { revalidatePath } = await import("next/cache");
-                        revalidatePath("/admin/assessments");
-                        revalidatePath("/assessments");
+                        const { deleteAssessmentAction } = await import("@/app/actions/assessment");
+                        await deleteAssessmentAction(assessment.id);
                       }}>
-                        <input type="hidden" name="id" value={assessment.id} />
                         <button type="submit" className="p-2 text-gray-400 dark:text-white/30 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg transition-all">
                           <Trash2 className="w-4 h-4" />
                         </button>
