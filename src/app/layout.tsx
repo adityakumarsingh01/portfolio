@@ -4,6 +4,7 @@ import "./globals.css";
 import ConditionalNavbar from "@/components/ConditionalNavbar";
 import ConditionalBackground from "@/components/ConditionalBackground";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,15 +37,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-        <ConditionalBackground />
-        
-        {/* Sidebar Overlay Mask (Removed, now using Top Navbar) */}
-        
-        <ConditionalNavbar />
-        <div className="relative z-10 transition-all duration-300">
-          {children}
-        </div>
+          <ConditionalBackground />
+
+          {/* Sidebar Overlay Mask (Removed, now using Top Navbar) */}
+
+          <ConditionalNavbar />
+          <div className="relative z-10 transition-all duration-300">
+            {children}
+          </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
