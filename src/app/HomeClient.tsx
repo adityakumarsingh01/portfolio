@@ -104,6 +104,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
                 alt="Aditya Kumar Singh"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                loading="eager"
               />
             </div>
           </motion.div>
