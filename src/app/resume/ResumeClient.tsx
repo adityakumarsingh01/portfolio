@@ -11,7 +11,7 @@ export default function ResumeClient({ pdfUrl, imageUrl }: { pdfUrl: string, ima
           My <span className="text-blue-600 dark:text-blue-400">Resume</span>
         </h1>
         <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-          A comprehensive overview of my experience, skills, and education. Available for Data Science, AI / ML and Full-Stack roles.
+          A comprehensive overview of my technical projects, core skills, and academic background. Available for AI Engineer, Machine Learning, Data Science, and Full-Stack roles.
         </p>
       </motion.div>
 
@@ -36,7 +36,7 @@ export default function ResumeClient({ pdfUrl, imageUrl }: { pdfUrl: string, ima
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-900 dark:text-white">Status</p>
-                  <p className="text-xs">Actively looking for roles</p>
+                  <p className="text-xs">Actively looking for roles & internships</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
@@ -44,8 +44,8 @@ export default function ResumeClient({ pdfUrl, imageUrl }: { pdfUrl: string, ima
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-gray-900 dark:text-white">Experience</p>
-                  <p className="text-xs">Fresher</p>
+                  <p className="text-sm font-bold text-gray-900 dark:text-white">Education</p>
+                  <p className="text-xs">B.Tech. (Hons.) CSE (Expected 2027)</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
@@ -54,7 +54,7 @@ export default function ResumeClient({ pdfUrl, imageUrl }: { pdfUrl: string, ima
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-900 dark:text-white">Location</p>
-                  <p className="text-xs">Remote / On-site</p>
+                  <p className="text-xs">India (Open to Remote / On-site)</p>
                 </div>
               </div>
             </div>

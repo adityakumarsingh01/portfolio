@@ -25,14 +25,14 @@ export default function Navbar() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="fixed w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center mix-blend-difference text-white top-0"
+        className="fixed w-full z-50 py-4 px-4 md:px-8 lg:px-12 flex justify-between items-center mix-blend-difference text-white top-0"
       >
-        <Link href="/" className="font-black text-xl md:text-2xl tracking-tighter hover:opacity-80 transition-opacity whitespace-nowrap" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+        <Link href="/" className="font-black text-lg md:text-2xl tracking-tighter hover:opacity-80 transition-opacity whitespace-nowrap shrink-0" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
           Aditya Singh
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden xl:flex gap-6 2xl:gap-8 text-[13px] font-bold tracking-[0.2em]" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+        <div className="hidden xl:flex gap-2 xl:gap-6 2xl:gap-5 text-[11px] xl:text-[12px] 2xl:text-[14px] font-bold tracking-[0.1em] xl:tracking-[0.13em] 2xl:tracking-[0.2em]" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
           {links.map((link) => (
             <Link key={link.name} href={link.href} className="hover:opacity-40 transition-opacity whitespace-nowrap">
               {link.name}
@@ -40,14 +40,17 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4 shrink-0">
           <ThemeToggle />
-          <Link href="/contact" className="flex bg-white text-black px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-[13px] font-bold tracking-widest hover:scale-105 transition-transform items-center justify-center whitespace-nowrap" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+          <Link href="/contact" className="flex bg-white text-black px-3 sm:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-[13px] font-bold tracking-widest hover:scale-105 transition-transform items-center justify-center whitespace-nowrap" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
             Let's Talk!
           </Link>
-          
+
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
             className="xl:hidden p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -67,17 +70,17 @@ export default function Navbar() {
           >
             <div className="flex flex-col items-center gap-8 text-2xl font-black" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
               {links.map((link) => (
-                <Link 
-                  key={link.name} 
-                  href={link.href} 
+                <Link
+                  key={link.name}
+                  href={link.href}
                   onClick={() => setIsOpen(false)}
                   className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="mt-4 bg-blue-600 text-white px-8 py-3 rounded-full text-lg tracking-widest hover:bg-blue-700 transition-colors"
               >

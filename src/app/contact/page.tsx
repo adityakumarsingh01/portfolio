@@ -35,11 +35,14 @@ export default function ContactPage() {
   return (
     <main className="max-w-6xl mx-auto px-6 md:px-12 pt-24 pb-16" style={{ fontFamily: 'Cambria, serif' }}>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
-        <h1 className="text-5xl md:text-7xl font-black mb-6 text-gray-900 dark:text-white capitalize tracking-wider" style={{ fontVariant: 'small-caps' }}>
-          Get in <span className="text-blue-600 dark:text-blue-400">Touch</span>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 text-gray-900 dark:text-white capitalize tracking-wider" style={{ fontVariant: 'small-caps' }}>
+          Let's Build Something <span className="text-blue-600 dark:text-blue-400">Meaningful</span>
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Looking for a driven Data Scientist, Machine Learning Engineer, or Full-Stack Developer to join your team? Let's discuss how my skills can bring value to your organization.
+        <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          I'm interested in opportunities across AI engineering, machine learning, data science, and AI-powered application development. If you're hiring, exploring a collaboration, or interested in my work, I'd be happy to connect.
+        </p>
+        <p className="text-sm sm:text-base font-semibold text-blue-600 dark:text-blue-400 mt-4 tracking-wide">
+          Let's turn ideas into practical solutions.
         </p>
       </motion.div>
 

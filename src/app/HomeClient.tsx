@@ -10,16 +10,16 @@ import SkillsCarousel from "@/components/SkillsCarousel";
 import { SpotlightCard } from "@/components/SpotlightCard";
 
 const technicalStack = [
-  { category: "Languages", skills: ["Python", "TypeScript", "Java", "C", "C++", "SQL", "JavaScript"] },
-  { category: "Core Computer Science", skills: ["Data Structures & Algorithms", "Object-Oriented Programming (OOP)"] },
-  { category: "Machine Learning", skills: ["Scikit-Learn", "NumPy", "Pandas", "XGBoost", "Feature Engineering"] },
-  { category: "AI / Deep Learning", skills: ["PyTorch", "NLP", "Hugging Face", "BART", "BioBERT", "Transformers"] },
-  { category: "Data Engineering", skills: ["Hadoop", "Hive", "HBase", "Spark", "Kafka", "Airflow", "Sqoop"] },
-  { category: "Data Visualization", skills: ["Power BI", "Recharts", "Matplotlib", "Seaborn", "Excel"] },
-  { category: "Frontend", skills: ["Next.js", "React", "Tailwind CSS", "HTML5/CSS3", "Shadcn/UI"] },
-  { category: "Backend", skills: ["FastAPI", "REST APIs", "Pydantic", "Uvicorn"] },
-  { category: "Databases & Cloud", skills: ["MySQL", "PostgreSQL", "Git/GitHub", "Docker", "Vercel", "Render"] },
-  { category: "Soft Skills", skills: ["Problem-Solving", "Analytical Thinking", "Adaptability", "Team Collaboration"] }
+  { category: "Programming Languages", skills: ["Python", "SQL", "Java", "C", "C++", "JavaScript", "TypeScript"] },
+  { category: "Machine Learning", skills: ["Scikit-learn", "NumPy", "Pandas", "XGBoost", "Feature Engineering", "Model Evaluation"] },
+  { category: "AI, Deep Learning & NLP", skills: ["PyTorch", "Hugging Face Transformers", "Natural Language Processing", "BART", "BioBERT", "Transformer Models", "Text Summarization", "Named Entity Recognition"] },
+  { category: "Data Analytics & Visualization", skills: ["Power BI", "Microsoft Excel", "Matplotlib", "Seaborn", "Recharts", "Exploratory Data Analysis", "Statistical Analysis"] },
+  { category: "Data Engineering & Big Data", skills: ["Hadoop", "Hive", "HBase", "Apache Spark", "Kafka", "Apache Airflow", "Sqoop", "SQL", "NoSQL"] },
+  { category: "Frontend Development", skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "shadcn/ui"] },
+  { category: "Backend Development", skills: ["FastAPI", "REST APIs", "Pydantic", "Uvicorn"] },
+  { category: "Databases", skills: ["MySQL", "PostgreSQL"] },
+  { category: "Developer Tools & Deployment", skills: ["Git", "GitHub", "VS Code", "Jupyter Notebook", "Docker", "Postman", "Vercel", "Render", "Linux"] },
+  { category: "Core Computer Science & Professional Skills", skills: ["Data Structures and Algorithms", "Object-Oriented Programming", "Problem-Solving", "Analytical Thinking", "Debugging", "Adaptability", "Communication", "Team Collaboration"] }
 ];
 
 export default function HomeClient({ projects: highlightedProjects }: { projects: any[] }) {
@@ -70,7 +70,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             transition={{ duration: 1, ease: "easeOut" }}
             className="flex flex-col items-center md:items-start w-full md:w-[60%] order-2 md:order-1"
           >
-            <h1 className="text-[clamp(4rem,10vw,8rem)] font-black leading-[0.9] tracking-tighter text-gray-900 dark:text-white flex flex-col items-center md:items-start text-center md:text-left" style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}>
+            <h1 className="text-[clamp(3.5rem,8.5vw,7.5rem)] font-black leading-[0.9] tracking-tighter text-gray-900 dark:text-white flex flex-col items-center md:items-start text-center md:text-left" style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}>
               <span className="relative z-20">Aditya</span>
               <span className="relative z-10 text-gray-400 dark:text-gray-500 flex items-center gap-4 my-1 md:my-2">
                 <div className="w-[10vw] md:w-16 h-[3px] bg-gray-300 dark:bg-gray-700 hidden md:block"></div>
@@ -80,14 +80,65 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             </h1>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className="mt-8 flex justify-center md:justify-start w-full"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="mt-6 flex flex-col items-center md:items-start w-full text-center md:text-left space-y-3"
             >
-              <p className="text-[10px] md:text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] leading-loose max-w-lg text-center md:text-left">
-                AI ENGINEER / MACHINE LEARNING / DATA SCIENCE / FULL-STACK DEVELOPMENT
+              <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white tracking-wide">
+                AI Engineer | Machine Learning Engineer | Data Scientist
+              </h2>
+              <p className="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wider uppercase">
+                AI-Powered Applications • Machine Learning • Data Science • Full-Stack Development
               </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base max-w-xl leading-relaxed">
+                I build AI-powered applications, machine learning solutions, and data analytics platforms to solve real-world problems.
+              </p>
+              <p className="text-xs sm:text-sm font-mono text-gray-500 dark:text-gray-400 border-l-2 border-blue-500/50 pl-3">
+                B.Tech. (Hons.) CSE - Data Science and Data Engineering | LPU | 2027
+              </p>
+
+              {/* Action Buttons & Socials */}
+              <div className="pt-4 flex flex-wrap items-center justify-center md:justify-start gap-3 w-full">
+                <a
+                  href="#projects"
+                  className="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-md hover:shadow-blue-500/20 hover:-translate-y-0.5 inline-flex items-center gap-2"
+                >
+                  Explore Projects <ArrowRight className="w-4 h-4" />
+                </a>
+                <Link
+                  href="/resume"
+                  className="px-5 py-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:opacity-90 font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-md hover:-translate-y-0.5 inline-flex items-center gap-2"
+                >
+                  View Resume
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-5 py-2.5 rounded-full border border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white text-gray-900 dark:text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all hover:-translate-y-0.5 inline-flex items-center gap-2"
+                >
+                  Let's Talk
+                </Link>
+                <div className="flex items-center gap-2 ml-1">
+                  <a
+                    href="https://github.com/adityakumarsingh01"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub Profile"
+                    className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:scale-110 transition-all"
+                  >
+                    <FaGithub className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/aditya-kumar-singh-990377291/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn Profile"
+                    className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:text-[#0A66C2] hover:scale-110 transition-all"
+                  >
+                    <FaLinkedin className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
 
@@ -98,28 +149,30 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             transition={{ delay: 0.2, type: "spring", stiffness: 150, damping: 20 }}
             className="w-full md:w-[40%] flex justify-center md:justify-end order-1 md:order-2"
           >
-            <div className="relative w-64 h-64 md:w-[28rem] md:h-[28rem] rounded-full md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-gray-100 dark:border-gray-900 z-30 group cursor-pointer">
-              <Image
-                src="/profile.jpg"
-                alt="Aditya Kumar Singh"
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
-                loading="eager"
-              />
+            <div className="relative">
+              <div className="relative w-64 h-64 md:w-[28rem] md:h-[28rem] rounded-full md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-gray-100 dark:border-gray-900 z-30 group cursor-pointer">
+                <Image
+                  src="/profile.jpg"
+                  alt="Aditya Kumar Singh"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                  loading="eager"
+                />
+              </div>
+
+              {/* Scroll Badge — centered at bottom of profile image */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-40 opacity-70">
+                <div className="relative w-24 h-24 md:w-32 md:h-32 animate-[spin_15s_linear_infinite]">
+                  <svg viewBox="0 0 100 100" className="w-full h-full fill-gray-900 dark:fill-white">
+                    <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                    <text className="text-[9.5px] font-black uppercase tracking-[0.25em]">
+                      <textPath href="#circlePath">SCROLL DOWN TO EXPLORE • SCROLL DOWN TO EXPLORE • </textPath>
+                    </text>
+                  </svg>
+                </div>
+              </div>
             </div>
           </motion.div>
-        </div>
-
-        {/* Scroll Badge */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex justify-center opacity-70">
-          <div className="relative w-28 h-28 md:w-36 md:h-36 animate-[spin_15s_linear_infinite]">
-            <svg viewBox="0 0 100 100" className="w-full h-full fill-gray-900 dark:fill-white">
-              <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
-              <text className="text-[9.5px] font-black uppercase tracking-[0.25em]">
-                <textPath href="#circlePath">SCROLL DOWN TO EXPLORE • SCROLL DOWN TO EXPLORE • </textPath>
-              </text>
-            </svg>
-          </div>
         </div>
       </section>
 
@@ -139,6 +192,16 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
 
       {/* Bento Box Skills & About */}
       <section className="py-24 border-t border-black/5 dark:border-white/5">
+        <div className="mb-12">
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400 font-bold block mb-3">Overview</span>
+          <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight" style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}>
+            Engineering Practical <span className="text-gradient">AI Solutions</span>
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-base md:text-xl max-w-4xl leading-relaxed">
+            I am a B.Tech. (Hons.) Computer Science and Engineering student specializing in Data Science and Data Engineering at Lovely Professional University. I build AI-powered applications, machine learning solutions, and data analytics platforms, combining Python, modern AI frameworks, and full-stack development to solve real-world problems.
+          </p>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -149,9 +212,9 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
           {/* About Card */}
           <SpotlightCard className="md:col-span-2 p-6 md:p-8 flex flex-col justify-center group border border-black/5 dark:border-white/5">
             <BrainCircuit className="w-10 h-10 text-blue-500 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">The Mindset</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
-              Currently pursuing a B.Tech (Hons.) in CSE with a specialization in <strong className="text-gray-900 dark:text-white font-medium">Data Science and Data Engineering</strong> at Lovely Professional University. I am driven by the thrill of discovering hidden patterns in massive datasets.
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">The Mindset</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed">
+              I enjoy turning complex problems into practical solutions through experimentation, analytical thinking, and continuous learning. My work spans AI applications, machine learning, data analytics, and full-stack development.
             </p>
           </SpotlightCard>
 
@@ -160,7 +223,9 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             <Cpu className="w-10 h-10 text-purple-500 dark:text-purple-400 group-hover:rotate-12 transition-transform duration-300" />
             <div>
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Machine Learning</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">PyTorch, Scikit-learn, Hugging Face, NLP, Transformers</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Develop predictive models and data-driven solutions using Python, Scikit-learn, Pandas, and NumPy, with a focus on data preprocessing, feature engineering, model evaluation, and practical machine learning workflows.
+              </p>
             </div>
           </SpotlightCard>
 
@@ -169,7 +234,9 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             <Database className="w-10 h-10 text-blue-500 dark:text-blue-400 group-hover:-translate-y-2 transition-transform duration-300" />
             <div>
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Data Engineering</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">Hadoop, Spark, Kafka, Airflow, SQL, NoSQL</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Explore distributed data processing, storage, and analytics pipelines using Hadoop, Hive, Spark, Kafka, Airflow, SQL, and related big data technologies.
+              </p>
             </div>
           </SpotlightCard>
 
@@ -178,26 +245,36 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             <Code className="w-10 h-10 text-pink-500 dark:text-pink-400 group-hover:rotate-6 transition-transform duration-300" />
             <div>
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Full-Stack AI</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">Next.js, FastAPI, React, TypeScript, Tailwind CSS</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Build AI-powered web applications using Next.js, React, TypeScript, and FastAPI, integrating frontend interfaces, backend services, APIs, and machine learning capabilities.
+              </p>
             </div>
           </SpotlightCard>
 
           {/* Experience Card */}
           <Link href="/projects" className="md:col-span-1 block h-full">
-            <SpotlightCard className="h-full p-6 md:p-8 flex flex-col justify-center items-center text-center group border border-black/5 dark:border-white/5">
+            <SpotlightCard className="h-full p-6 md:p-8 flex flex-col justify-center items-center text-center group border border-black/5 dark:border-white/5 hover:border-yellow-500/30 transition-colors">
               <Zap className="w-10 h-10 text-yellow-500 dark:text-yellow-400 mb-4 group-hover:scale-125 transition-transform duration-300" />
-              <h4 className="text-4xl font-black text-gray-900 dark:text-white mb-2">20+</h4>
-              <p className="text-gray-600 dark:text-gray-400">Data & AI Projects Completed</p>
+              <h4 className="text-2xl font-black text-gray-900 dark:text-white mb-2">Projects Across AI & Data</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-xs md:text-sm">Explore practical implementations, prototypes, and technical solutions →</p>
             </SpotlightCard>
           </Link>
         </motion.div>
       </section>
 
       {/* 3D Project Cards (Highlighted) */}
-      <section className="py-24 border-t border-black/5 dark:border-white/5">
-        <div className="flex justify-between items-end mb-12">
-          <h3 className="text-4xl font-black text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}>Selected <span className="text-gradient">Work</span></h3>
-          <span className="text-gray-500 hidden md:block">Hover to interact</span>
+      <section className="py-24 border-t border-black/5 dark:border-white/5 scroll-mt-24" id="projects">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+          <div>
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400 font-bold block mb-2">Portfolio</span>
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}>
+              Featured <span className="text-gradient">Projects</span>
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base mt-2 max-w-xl">
+              Practical AI engineering, machine learning pipelines, and full-stack intelligent applications.
+            </p>
+          </div>
+          <span className="text-gray-500 text-sm hidden md:block">Click any card for architectural breakdown</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -220,9 +297,10 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
       {/* New Technical Stack Section */}
       <section className="py-24 border-t border-black/5 dark:border-white/5 flex flex-col lg:flex-row gap-12 md:gap-24">
         <div className="lg:w-1/3 lg:sticky lg:top-32 h-fit">
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400 font-bold block mb-3">Core Competencies</span>
           <h3 className="text-[clamp(3rem,5vw,5rem)] font-black leading-none tracking-tighter text-gray-900 dark:text-white mb-8">Technical Stack</h3>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-            As an engineering student passionate about <strong className="text-gray-900 dark:text-white">Data Science and Machine Learning</strong>, I use programming, data analysis, and visualization to solve real-world problems and extract meaningful insights from data.
+            As an engineering student passionate about <strong className="text-gray-900 dark:text-white">AI engineering, machine learning, and data science</strong>, I build practical applications, predictive systems, and data pipelines to solve real-world problems.
           </p>
         </div>
 
@@ -231,7 +309,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Machine Learning</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                Build predictive and intelligent AI solutions using <strong className="text-gray-900 dark:text-white">Scikit-learn, Pandas, NumPy, and XGBoost</strong> with expertise in feature engineering, model training, evaluation, AutoML workflows, and supervised learning algorithms.
+                Develop predictive models using Python, Scikit-learn, Pandas, and NumPy, with experience in data preprocessing, feature engineering, model training, evaluation, and supervised learning algorithms.
               </p>
             </SpotlightCard>
           </motion.div>
@@ -240,7 +318,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Data Analysis</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                Perform end-to-end data analysis including <strong className="text-gray-900 dark:text-white">EDA, data cleaning, preprocessing, feature engineering, statistical analysis, and dataset profiling</strong> to uncover actionable business insights.
+                Perform exploratory data analysis, data cleaning, preprocessing, statistical analysis, and feature engineering to uncover meaningful patterns and actionable insights from structured datasets.
               </p>
             </SpotlightCard>
           </motion.div>
@@ -249,7 +327,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Data Visualization</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                Develop interactive dashboards and analytical reports using <strong className="text-gray-900 dark:text-white">Power BI, Recharts, Matplotlib, and Excel</strong>, enabling clear visualization of trends, KPIs, and model performance.
+                Create interactive dashboards and analytical reports using Power BI, Excel, Matplotlib, and Seaborn to communicate trends, KPIs, and business insights.
               </p>
             </SpotlightCard>
           </motion.div>
@@ -258,7 +336,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">AI & Natural Language Processing (NLP)</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                Develop intelligent AI applications using <strong className="text-gray-900 dark:text-white">PyTorch, Hugging Face Transformers, BART, BioBERT, and NLP techniques</strong> for text summarization, entity extraction, classification, and AI-assisted workflows.
+                Develop NLP applications using PyTorch and Hugging Face Transformers, exploring text summarization, named entity recognition, text classification, and transformer-based models.
               </p>
             </SpotlightCard>
           </motion.div>
@@ -267,7 +345,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Full-Stack AI Development</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                Design and develop modern AI-powered web applications using <strong className="text-gray-900 dark:text-white">Next.js, React, TypeScript, Tailwind CSS, FastAPI, REST APIs, and Axios</strong>, integrating machine learning models with responsive user interfaces.
+                Build AI-powered web applications using Next.js, React, TypeScript, and FastAPI, integrating backend services, external APIs, and machine learning capabilities into responsive user interfaces.
               </p>
             </SpotlightCard>
           </motion.div>
@@ -276,7 +354,7 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Data Engineering & Big Data</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                Experience working with <strong className="text-gray-900 dark:text-white">Hadoop, Hive, HBase, Spark, Kafka, Airflow, and Sqoop</strong> for distributed data processing, storage, and analytics pipelines.
+                Work with distributed data processing and storage technologies, including Hadoop, Hive, HBase, Spark, Kafka, Airflow, and Sqoop, to understand and build data processing workflows.
               </p>
             </SpotlightCard>
           </motion.div>
@@ -285,16 +363,16 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
             <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
               <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Tools & Technologies</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                Proficient in <strong className="text-gray-900 dark:text-white">Git/GitHub, VS Code, Jupyter Notebook, Docker, MySQL, PostgreSQL, REST APIs, Postman, Vercel, Render, and Linux</strong>, following modern software development practices.
+                Use Git, GitHub, VS Code, Jupyter Notebook, Docker, databases, REST APIs, and deployment platforms to develop, test, and maintain software applications.
               </p>
             </SpotlightCard>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.7 }}>
             <SpotlightCard className="p-6 md:p-8 lg:p-12 border border-black/5 dark:border-white/5">
-              <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Soft Skills & Ethics</h4>
+              <h4 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Soft Skills</h4>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                Strong analytical thinking, problem-solving, communication, teamwork, adaptability, leadership, debugging, and solution-oriented development with a focus on writing clean and scalable code.
+                Apply analytical thinking, problem-solving, communication, teamwork, adaptability, and debugging skills to build reliable and maintainable solutions.
               </p>
             </SpotlightCard>
           </motion.div>
@@ -423,8 +501,65 @@ export default function HomeClient({ projects: highlightedProjects }: { projects
       </AnimatePresence>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-white/5 text-center text-gray-500">
-        <p>© {new Date().getFullYear()} Aditya Kumar Singh. Built with Next.js & Framer Motion.</p>
+      <footer className="pt-16 pb-12 border-t border-black/5 dark:border-white/5 text-gray-500">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12">
+          <div className="text-center md:text-left">
+            <h4 className="text-2xl font-black text-gray-900 dark:text-white" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
+              Aditya Kumar Singh
+            </h4>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 max-w-sm leading-relaxed">
+              AI Engineer & Data Scientist specializing in machine learning, AI applications, and distributed data systems.
+            </p>
+            <p className="text-xs font-mono text-gray-500 mt-2">
+              B.Tech. (Hons.) CSE - Data Science & Data Engineering (2027)
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-bold tracking-widest uppercase">
+            <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Overview</Link>
+            <Link href="/projects" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</Link>
+            <Link href="/assessments" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Assessments</Link>
+            <Link href="/entrepreneurship" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Entrepreneurship</Link>
+            <Link href="/education" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Education</Link>
+            <Link href="/certificates" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certificates</Link>
+            <Link href="/training" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Training</Link>
+            <Link href="/resume" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Resume</Link>
+            <Link href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</Link>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <a
+              href="mailto:adityasingh81201@gmail.com"
+              className="p-2.5 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-blue-50 dark:hover:bg-blue-900/20 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors"
+              aria-label="Email Aditya Kumar Singh"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+            <a
+              href="https://github.com/adityakumarsingh01"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              aria-label="GitHub Profile"
+            >
+              <FaGithub className="w-4 h-4" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aditya-kumar-singh-990377291/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-blue-50 dark:hover:bg-blue-900/20 text-gray-700 dark:text-gray-300 hover:text-[#0A66C2] transition-colors"
+              aria-label="LinkedIn Profile"
+            >
+              <FaLinkedin className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
+        <div className="pt-6 border-t border-black/5 dark:border-white/5 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-2">
+          <p>© {new Date().getFullYear()} Aditya Kumar Singh. All rights reserved.</p>
+          <p>Built with Next.js, React, Tailwind CSS & Framer Motion.</p>
+        </div>
       </footer>
     </main>
   );

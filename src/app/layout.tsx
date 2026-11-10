@@ -17,10 +17,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aditya Kumar Singh",
-  description: "Professional portfolio of Aditya Kumar Singh, Data Science and Data Engineering student. Exploring ML, AI, and Data Analytics.",
+  metadataBase: new URL("https://adityasingh.vercel.app"),
+  title: "Aditya Kumar Singh | AI Engineer, Machine Learning & Data Science",
+  description: "Explore Aditya Kumar Singh's AI and machine learning projects, data analytics solutions, NLP applications, data engineering work, and full-stack development portfolio.",
   icons: {
     icon: '/profile.jpg',
+  },
+  openGraph: {
+    title: "Aditya Kumar Singh | AI Engineer, Machine Learning & Data Science",
+    description: "Explore Aditya Kumar Singh's AI and machine learning projects, data analytics solutions, NLP applications, data engineering work, and full-stack development portfolio.",
+    type: "website",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 800,
+        height: 800,
+        alt: "Aditya Kumar Singh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aditya Kumar Singh | AI Engineer, Machine Learning & Data Science",
+    description: "Explore Aditya Kumar Singh's AI and machine learning projects, data analytics solutions, NLP applications, data engineering work, and full-stack development portfolio.",
+    images: ["/profile.jpg"],
   },
 };
 
