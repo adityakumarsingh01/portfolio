@@ -2,7 +2,7 @@ import { prisma } from "./src/lib/prisma";
 
 const educationData = [
   {
-    title: "B.Tech. (Hons.) (CSE- Data Science and Data Engineering)",
+    title: "B.Tech. (Hons.) (CSE - Data Science and Data Engineering)",
     institution: "Lovely Professional University | Jalandhar, Punjab",
     date: "Aug' 23 - Present",
     icon: "🎓"
@@ -26,7 +26,7 @@ async function main() {
   await prisma.education.deleteMany({});
 
   console.log(`Seeding ${educationData.length} education records...`);
-  
+
   const now = Date.now();
   for (let i = 0; i < educationData.length; i++) {
     const edu = educationData[i];

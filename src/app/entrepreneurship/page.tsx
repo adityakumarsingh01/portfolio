@@ -33,7 +33,7 @@ export default function EntrepreneurshipPage() {
               <div className="mb-8">
                 <span className="text-sm font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest mb-3 block">Startup Venture & E-Commerce Concept</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 capitalize tracking-wider" style={{ fontFamily: 'Cambria, serif', fontVariant: 'small-caps' }}>
-                  Custom Print — Customizable Merchandise E-Commerce
+                  Custom Print - Customizable Merchandise E-Commerce
                 </h2>
                 <div className="flex flex-wrap items-center gap-3 text-sm font-medium text-gray-600 dark:text-gray-400 mb-6">
                   <span className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">Founder</span>

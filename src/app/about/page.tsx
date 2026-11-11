@@ -33,7 +33,7 @@ export default function AboutPage() {
             <h3 className="text-gray-900 dark:text-white font-bold mb-2 flex items-center gap-2"><GraduationCap className="text-blue-500 w-5 h-5" /> Education</h3>
             <div className="space-y-4">
               <div>
-                <p className="text-sm text-blue-600 dark:text-blue-400 font-mono">Aug 2023 — 2027 (Expected)</p>
+                <p className="text-sm text-blue-600 dark:text-blue-400 font-mono">Aug 2023 — 2027</p>
                 <p className="text-gray-900 dark:text-white font-medium">B.Tech. (Hons.) CSE — Data Science and Data Engineering</p>
                 <p className="text-gray-500 dark:text-gray-400 text-sm">Lovely Professional University</p>
               </div>
